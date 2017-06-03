@@ -1,5 +1,5 @@
 //
-//  OHAcountContin.h
+//  OHMoneyRunContent.h
 //  Acount1.0
 //
 //  Created by Ohlulu on 2017/5/12.
@@ -20,13 +20,13 @@
 #define FORMAT_MONTH @"MMM"
 #define FORMAT_YEAR @"yyyy"
 
+#define currentNumberFormatter
 
 
 
 
 
 
-
-@interface OHAcountContin : NSObject
+@interface OHMoneyRunContent : NSObject
 
 @end

@@ -11,7 +11,7 @@
 #import "TopCell.h"
 #import "NormalCell.h"
 #import "AddViewController.h"
-#import "OHAcountContin.h"
+#import "OHMoneyRunContent.h"
 
 @interface HistoryViewController () <UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,AddViewControllerDelegate>
 {

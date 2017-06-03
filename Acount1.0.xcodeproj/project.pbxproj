@@ -16,6 +16,7 @@
 		503593901EA9F3CF005C5AB3 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5035938F1EA9F3CF005C5AB3 /* TabBarViewController.m */; };
 		5056B1311EC1F6E30095D967 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056B1301EC1F6E30095D967 /* CalendarViewController.m */; };
 		505738AE1EE2671D0088D330 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 505738B01EE2671D0088D330 /* InfoPlist.strings */; };
+		505738B61EE2918F0088D330 /* OHMoneyRunContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 505738B51EE2918F0088D330 /* OHMoneyRunContent.m */; };
 		505DF4071E9CB612002FA726 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DF4061E9CB612002FA726 /* main.m */; };
 		505DF40A1E9CB612002FA726 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DF4091E9CB612002FA726 /* AppDelegate.m */; };
 		505DF40D1E9CB612002FA726 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DF40C1E9CB612002FA726 /* ViewController.m */; };
@@ -61,7 +62,6 @@
 		50D285C01ED6D15500083888 /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D285BE1ED6D15500083888 /* calendar@3x.png */; };
 		50D3531A1EC42C4C005BDB5D /* CategoryEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D353191EC42C4C005BDB5D /* CategoryEditViewController.m */; };
 		50F4B63C1EC4856A000A505B /* CategoryAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4B63B1EC4856A000A505B /* CategoryAddViewController.m */; };
-		50F4B65A1EC5B880000A505B /* OHAcountContin.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4B6591EC5B880000A505B /* OHAcountContin.m */; };
 		50F4C71D1EB83537002BB65C /* Category+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4C7161EB83537002BB65C /* Category+CoreDataClass.m */; };
 		50F4C71E1EB83537002BB65C /* Category+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4C7181EB83537002BB65C /* Category+CoreDataProperties.m */; };
 		50F4C7231EB84C98002BB65C /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4C7201EB84C98002BB65C /* Item+CoreDataClass.m */; };
@@ -109,6 +109,8 @@
 		505738B11EE267720088D330 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		505738B21EE267720088D330 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		505738B31EE267720088D330 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		505738B41EE2918F0088D330 /* OHMoneyRunContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHMoneyRunContent.h; sourceTree = "<group>"; };
+		505738B51EE2918F0088D330 /* OHMoneyRunContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHMoneyRunContent.m; sourceTree = "<group>"; };
 		505DF4021E9CB612002FA726 /* Acount1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acount1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		505DF4061E9CB612002FA726 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		505DF4081E9CB612002FA726 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,8 +168,6 @@
 		50D353191EC42C4C005BDB5D /* CategoryEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryEditViewController.m; sourceTree = "<group>"; };
 		50F4B63A1EC4856A000A505B /* CategoryAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryAddViewController.h; sourceTree = "<group>"; };
 		50F4B63B1EC4856A000A505B /* CategoryAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryAddViewController.m; sourceTree = "<group>"; };
-		50F4B6581EC5B880000A505B /* OHAcountContin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHAcountContin.h; sourceTree = "<group>"; };
-		50F4B6591EC5B880000A505B /* OHAcountContin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHAcountContin.m; sourceTree = "<group>"; };
 		50F4C7151EB83537002BB65C /* Category+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Category+CoreDataClass.h"; sourceTree = "<group>"; };
 		50F4C7161EB83537002BB65C /* Category+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Category+CoreDataClass.m"; sourceTree = "<group>"; };
 		50F4C7171EB83537002BB65C /* Category+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Category+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -294,10 +294,10 @@
 				5035937F1EA8E0DB005C5AB3 /* Image */,
 				505DF4081E9CB612002FA726 /* AppDelegate.h */,
 				505DF4091E9CB612002FA726 /* AppDelegate.m */,
+				505738B41EE2918F0088D330 /* OHMoneyRunContent.h */,
+				505738B51EE2918F0088D330 /* OHMoneyRunContent.m */,
 				5035938E1EA9F3CF005C5AB3 /* TabBarViewController.h */,
 				5035938F1EA9F3CF005C5AB3 /* TabBarViewController.m */,
-				50F4B6581EC5B880000A505B /* OHAcountContin.h */,
-				50F4B6591EC5B880000A505B /* OHAcountContin.m */,
 				503593891EA9B41D005C5AB3 /* History */,
 				5035938A1EA9B42F005C5AB3 /* Add */,
 				5035938B1EA9B43D005C5AB3 /* Analysis */,
@@ -768,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				502DAD981EC0456F00707524 /* NormalCell.m in Sources */,
+				505738B61EE2918F0088D330 /* OHMoneyRunContent.m in Sources */,
 				50F4C71E1EB83537002BB65C /* Category+CoreDataProperties.m in Sources */,
 				505DF4131E9CB612002FA726 /* Acount1_0.xcdatamodeld in Sources */,
 				50F4B63C1EC4856A000A505B /* CategoryAddViewController.m in Sources */,
@@ -777,7 +778,6 @@
 				503593881EA8E4D5005C5AB3 /* AnalysisViewController.m in Sources */,
 				50F4C7231EB84C98002BB65C /* Item+CoreDataClass.m in Sources */,
 				502DAD951EBFFCF000707524 /* TopCell.m in Sources */,
-				50F4B65A1EC5B880000A505B /* OHAcountContin.m in Sources */,
 				503593851EA8E13D005C5AB3 /* AddViewController.m in Sources */,
 				50D3531A1EC42C4C005BDB5D /* CategoryEditViewController.m in Sources */,
 				50F4C7241EB84C98002BB65C /* Item+CoreDataProperties.m in Sources */,

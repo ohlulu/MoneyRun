@@ -9,7 +9,7 @@
 #import "AnalysisViewController.h"
 #import "AddViewController.h"
 #import "DataController.h"
-#import "OHAcountContin.h"
+#import "OHMoneyRunContent.h"
 @import Charts;
 
 
