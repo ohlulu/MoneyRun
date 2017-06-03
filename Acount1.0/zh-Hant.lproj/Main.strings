@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "類別名稱："; ObjectID = "2ti-Q4-5VO"; */
+"2ti-Q4-5VO.text" = "類別名稱：";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3iR-XC-hup"; */
+"3iR-XC-hup.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "<"; ObjectID = "C1d-qZ-pAX"; */
+"C1d-qZ-pAX.title" = "<";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FW5-pV-LEh"; */
+"FW5-pV-LEh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Jrd-zE-3gg"; */
+"Jrd-zE-3gg.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "History"; ObjectID = "KCV-Rk-aJu"; */
+"KCV-Rk-aJu.title" = "History";
+
+/* Class = "UIButton"; normalTitle = "四月"; ObjectID = "OiO-jJ-v0C"; */
+"OiO-jJ-v0C.normalTitle" = "四月";
+
+/* Class = "UIButton"; normalTitle = "Butto"; ObjectID = "dGO-ts-ysN"; */
+"dGO-ts-ysN.normalTitle" = "Butto";
+
+/* Class = "UITextField"; text = "01234567"; ObjectID = "dgX-1S-wfR"; */
+"dgX-1S-wfR.text" = "01234567";
+
+/* Class = "UITabBarItem"; title = "Analysis"; ObjectID = "hIv-i8-5Kq"; */
+"hIv-i8-5Kq.title" = "Analysis";
+
+/* Class = "UIBarButtonItem"; title = "<"; ObjectID = "hQZ-5a-roC"; */
+"hQZ-5a-roC.title" = "<";
+
+/* Class = "UIBarButtonItem"; title = "New"; ObjectID = "kh5-yS-2Ky"; */
+"kh5-yS-2Ky.title" = "New";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "mcU-hF-kap"; */
+"mcU-hF-kap.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "月花費"; ObjectID = "oAG-xg-Z9S"; */
+"oAG-xg-Z9S.text" = "月花費";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "rhf-Rf-9gO"; */
+"rhf-Rf-9gO.text" = "Title";
+
+/* Class = "UISegmentedControl"; y2z-JF-6ei.segmentTitles[0] = "今天"; ObjectID = "y2z-JF-6ei"; */
+"y2z-JF-6ei.segmentTitles[0]" = "今天";
+
+/* Class = "UISegmentedControl"; y2z-JF-6ei.segmentTitles[1] = "昨天"; ObjectID = "y2z-JF-6ei"; */
+"y2z-JF-6ei.segmentTitles[1]" = "昨天";
+
+/* Class = "UISegmentedControl"; yJA-DA-d5A.segmentTitles[0] = "今年"; ObjectID = "yJA-DA-d5A"; */
+"yJA-DA-d5A.segmentTitles[0]" = "今年";
+
+/* Class = "UISegmentedControl"; yJA-DA-d5A.segmentTitles[1] = "本月"; ObjectID = "yJA-DA-d5A"; */
+"yJA-DA-d5A.segmentTitles[1]" = "本月";
