@@ -10,5 +10,5 @@
 #import "Item+CoreDataProperties.h"
 @interface CustomData : NSObject
 @property (nonatomic) NSString *title;
-@property (nonatomic) NSArray<Item *> *items;
+@property (nonatomic) NSMutableArray<Item *> *items;
 @end

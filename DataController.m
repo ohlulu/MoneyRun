@@ -133,7 +133,7 @@
         
         CustomData *item = [CustomData new];
         item.title = [obj valueForKey:@"formatDate"];
-        item.items = [self loadItemsInDate:[obj valueForKey:@"formatDate"]];
+        item.items = [[self loadItemsInDate:[obj valueForKey:@"formatDate"]] mutableCopy];
         [datas addObject:item];
         
     }];

@@ -321,19 +321,8 @@
         
         [dc insertItem:item WithCategorylName:selectedCategoryName];
         
-//        [self.currentItem.category removeItemsObject:self.currentItem];
-//        [self.currentItem.category removeItems:[NSSet setWithObject:self.currentItem]];
-//        [dc deleteItem:self.currentItem WithCategorylName:self.currentItem.category.name];
         [dc.managedObjectContext deleteObject:self.currentItem];
-        
-//        self.currentItem.money = [intString intValue];
-//        self.currentItem.trueDate = prepareTrueDate;
-//        self.currentItem.formatDate = prepareFormatDate;
-//        self.currentItem.category.imageName = ;
-//        self.currentItem.category.name = selectedCategoryName;
-//        [dc saveToCoreData];
-        
-//        [self.delegate didFinishEditItem:self.currentItem];
+
         [self.navigationController popViewControllerAnimated:YES];
     
     }
