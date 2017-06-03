@@ -129,7 +129,7 @@
     currencyFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
     
     if (self.presentingViewController) {
-        [self.navigationItem.leftBarButtonItem setTitle:@"Cancel"];
+        [self.navigationItem.leftBarButtonItem setTitle:NSLocalizedString(@"Cancel", @"cancel")];
     }
     
     
@@ -397,6 +397,11 @@
 #pragma mark - UITextFieldTextDidChangeNotification
 
 - (void)textFieldTextDidChangeNotification:(NSNotification *)notification {
+    
+    if ([self.moneyText.text isEqualToString:@""]) {
+        self.moneyText.text = [currencyFormatter stringFromNumber:@(0)];
+        return;
+    }
     
     NSMutableString *intString = [self.moneyText.text mutableCopy];
     [intString deleteCharactersInRange:NSMakeRange(0, 1)];
