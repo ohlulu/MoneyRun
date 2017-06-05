@@ -13,6 +13,7 @@
 #import <FSCalendar/FSCalendar.h>
 #import "CalendarViewController.h"
 
+
 @interface AddViewController ()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,FSCalendarDelegate,FSCalendarDataSource,CalendarViewControllerDelegate>
 {
     
@@ -130,6 +131,8 @@
     
     if (self.presentingViewController) {
         [self.navigationItem.leftBarButtonItem setTitle:NSLocalizedString(@"Cancel", @"cancel")];
+    } else {
+        [self.navigationItem.leftBarButtonItem setImage:[UIImage imageNamed:@"back"]];
     }
     
     
@@ -251,6 +254,13 @@
 //    [self.categoryName setText:[self.categoryList valueForKey:@"name"][indexPath.row]];
     NSString *selectedImageName = [self.categoryList[indexPath.row] valueForKey:@"imageName"];
     self.categoryImageView.image = [UIImage imageNamed:selectedImageName];
+    if ([self.moneyText isFirstResponder]) {
+        [self.moneyText resignFirstResponder];
+    } else {
+        [self.moneyText becomeFirstResponder];
+    }
+    
+    
  
 }
 
@@ -289,9 +299,12 @@
     prepareFormatDate = [dateFormat stringFromDate:prepareTrueDate];
     
     
+    
     if (self.presentingViewController) {
         
         // If addVC is pressenting from tabBarController
+        
+        
         
         // New managed object then insert to core data
         Item *item = [NSEntityDescription insertNewObjectForEntityForName:ENTITY_ITEM inManagedObjectContext:dc.managedObjectContext];
@@ -305,7 +318,9 @@
         [dc insertItem:item WithCategorylName:selectedCategoryName];
         
         // Dismiss addVC
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
         
     } else {
         
@@ -410,12 +425,12 @@
     if ([intString integerValue] > 0) {
         [self.addButton setEnabled:YES];
         // rgba(58, 180, 58, 0.84)
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.25 animations:^{
             self.addButton.backgroundColor = OHSaveButtonActionColor;
         }];
         
     } else if ([intString intValue] == 0 ) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:0.25 animations:^{
             self.addButton.backgroundColor = [UIColor lightGrayColor];
         }];
     }

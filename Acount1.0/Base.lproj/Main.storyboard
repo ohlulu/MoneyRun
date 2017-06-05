@@ -378,7 +378,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="eFU-Fj-ADk">
-                        <barButtonItem key="leftBarButtonItem" title="&lt;" style="done" id="hQZ-5a-roC">
+                        <barButtonItem key="leftBarButtonItem" style="done" id="hQZ-5a-roC">
                             <connections>
                                 <action selector="cancel:" destination="Ci9-jD-n1B" id="s3Q-5n-6Co"/>
                             </connections>

@@ -61,6 +61,9 @@
 		50D285BF1ED6D15500083888 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D285BD1ED6D15500083888 /* calendar@2x.png */; };
 		50D285C01ED6D15500083888 /* calendar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D285BE1ED6D15500083888 /* calendar@3x.png */; };
 		50D3531A1EC42C4C005BDB5D /* CategoryEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D353191EC42C4C005BDB5D /* CategoryEditViewController.m */; };
+		50DD10D51EE2FD3D001D9084 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DD10D41EE2FD3D001D9084 /* GoogleService-Info.plist */; };
+		50DD10D81EE3EB8C001D9084 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD10D61EE3EB8C001D9084 /* back@3x.png */; };
+		50DD10D91EE3EB8C001D9084 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD10D71EE3EB8C001D9084 /* back@2x.png */; };
 		50F4B63C1EC4856A000A505B /* CategoryAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4B63B1EC4856A000A505B /* CategoryAddViewController.m */; };
 		50F4C71D1EB83537002BB65C /* Category+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4C7161EB83537002BB65C /* Category+CoreDataClass.m */; };
 		50F4C71E1EB83537002BB65C /* Category+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F4C7181EB83537002BB65C /* Category+CoreDataProperties.m */; };
@@ -166,6 +169,9 @@
 		50D285BE1ED6D15500083888 /* calendar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@3x.png"; sourceTree = "<group>"; };
 		50D353181EC42C4C005BDB5D /* CategoryEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryEditViewController.h; sourceTree = "<group>"; };
 		50D353191EC42C4C005BDB5D /* CategoryEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryEditViewController.m; sourceTree = "<group>"; };
+		50DD10D41EE2FD3D001D9084 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		50DD10D61EE3EB8C001D9084 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		50DD10D71EE3EB8C001D9084 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		50F4B63A1EC4856A000A505B /* CategoryAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryAddViewController.h; sourceTree = "<group>"; };
 		50F4B63B1EC4856A000A505B /* CategoryAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryAddViewController.m; sourceTree = "<group>"; };
 		50F4C7151EB83537002BB65C /* Category+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Category+CoreDataClass.h"; sourceTree = "<group>"; };
@@ -216,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				50D285961ED6C5F300083888 /* CategoryImage */,
+				50DD10D61EE3EB8C001D9084 /* back@3x.png */,
+				50DD10D71EE3EB8C001D9084 /* back@2x.png */,
 				507BDD961ED726A7005E1ABA /* list@2x.png */,
 				50D285891ED68A1800083888 /* list.png */,
 				50B87A8A1EDEEE96000A8506 /* analysis@2x.png */,
@@ -317,6 +325,7 @@
 		505DF4051E9CB612002FA726 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50DD10D41EE2FD3D001D9084 /* GoogleService-Info.plist */,
 				505738B01EE2671D0088D330 /* InfoPlist.strings */,
 				505DF4061E9CB612002FA726 /* main.m */,
 			);
@@ -562,6 +571,7 @@
 				50D285951ED6BC0300083888 /* add@3x.png in Resources */,
 				50D285B01ED6C61E00083888 /* food@3x.png in Resources */,
 				505DF4151E9CB612002FA726 /* Assets.xcassets in Resources */,
+				50DD10D51EE2FD3D001D9084 /* GoogleService-Info.plist in Resources */,
 				50D285A81ED6C61E00083888 /* car@3x.png in Resources */,
 				50D285C01ED6D15500083888 /* calendar@3x.png in Resources */,
 				505DF4101E9CB612002FA726 /* Main.storyboard in Resources */,
@@ -571,9 +581,11 @@
 				50D285911ED6BBF600083888 /* left@3x.png in Resources */,
 				50D285AD1ED6C61E00083888 /* doctor@3x.png in Resources */,
 				50D285BC1ED6C63500083888 /* travel@3x.png in Resources */,
+				50DD10D91EE3EB8C001D9084 /* back@2x.png in Resources */,
 				507BDD951ED70804005E1ABA /* play@3x.png in Resources */,
 				50D285931ED6BBF600083888 /* right@3x.png in Resources */,
 				50D285A61ED6C61E00083888 /* candy@3x.png in Resources */,
+				50DD10D81EE3EB8C001D9084 /* back@3x.png in Resources */,
 				50D285AA1ED6C61E00083888 /* coat@3x.png in Resources */,
 				50D285871ED669AF00083888 /* add@2x.png in Resources */,
 				507BDD971ED726A7005E1ABA /* list@2x.png in Resources */,

@@ -12,13 +12,13 @@
 #import "HistoryViewController.h"
 #import "AnalysisViewController.h"
 #import "DataController.h"
-
+#import "OHMoneyRunContent.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+@import GoogleMobileAds;
+@import Firebase;
 
-#define CATEGORY_LIST @[@"食物",@"飲料",@"零食",@"交通",@"娛樂",@"寵物",@"旅行",@"服裝",@"醫療",@"居住"]
-#define CATEGORY_IMAGE_NAME @[@"food",@"drink",@"candy",@"car",@"play",@"pet",@"travel",@"coat",@"doctor",@"house"]
-#define IS_FIRST_OPEN @"isFirstOpen"
+
 
 
 
@@ -32,6 +32,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [Fabric with:@[[Crashlytics class]]];
+    [FIRApp configure];
+    
     
     UITextField *lagFreeField = [[UITextField alloc] init];
     [self.window addSubview:lagFreeField];
@@ -40,11 +42,11 @@
     [lagFreeField removeFromSuperview];
     
     
-    NSLog(@"HOME PAHT%@",NSHomeDirectory());
+    NSLog(@"HOME PAHT : %@",NSHomeDirectory());
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    BOOL isFirst = [defaults boolForKey:IS_FIRST_OPEN];
+    BOOL isFirst = [defaults boolForKey:isFirstOpen];
     if (!isFirst) {
         
         DataController *dc = [DataController sharedInstance];
@@ -63,8 +65,20 @@
             
         }];
         
-        [defaults setBool:YES forKey:IS_FIRST_OPEN];
+        [defaults setBool:YES forKey:isFirstOpen];
     }
+    
+    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+    NSLog(@"Version : %@",version);
+    
+    
+    NSString *versionFromBox = [defaults stringForKey:shortVersion];
+    if (![version isEqualToString:versionFromBox]) {
+        [defaults setInteger:0 forKey:addBtnPressCount];
+        [defaults setBool:NO forKey:isShowStoreReview];
+        [defaults setValue:version forKey:shortVersion];
+    }
+    
 
     
     return YES;

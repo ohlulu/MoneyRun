@@ -12,8 +12,9 @@
 #import "NormalCell.h"
 #import "AddViewController.h"
 #import "OHMoneyRunContent.h"
+@import StoreKit;
 
-@interface HistoryViewController () <UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,AddViewControllerDelegate>
+@interface HistoryViewController () <UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,AddViewControllerDelegate,UIAlertViewDelegate,SKStoreProductViewControllerDelegate>
 {
 
     DataController *dc;
@@ -139,6 +140,43 @@
     [self.datas insertObject:topData atIndex:0];
     
     [self.tableView reloadData];
+    
+    [self showAskViewController];
+    
+}
+
+#pragma mark - Show Ask View Controller
+
+- (void) showAskViewController {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger count = [defaults integerForKey:addBtnPressCount];
+    if (count < 3) {
+        count++;
+        [defaults setInteger:count forKey:addBtnPressCount];
+    } else {
+        bool isShowSR = [defaults boolForKey:isShowStoreReview];
+        if (!isShowSR) {
+            if (NSClassFromString(@"SKStoreReviewController")) {
+                [SKStoreReviewController requestReview];
+                [defaults setBool:YES forKey:isShowStoreReview];
+            } else {
+                UIAlertController *askController = [UIAlertController alertControllerWithTitle:@"Hello" message:@"If you like this app, please rate in App store. Thanks." preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *laterAction = [UIAlertAction actionWithTitle:@"Later" style:UIAlertActionStyleDefault handler:nil];
+                UIAlertAction *okActino = [UIAlertAction actionWithTitle:@"Rate" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    NSString *appID = @"1242869090";
+                    NSString *rateURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",appID];
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:rateURL] options:@{} completionHandler:nil];
+                    [defaults setBool:YES forKey:isShowStoreReview];
+                }];
+                [askController addAction:laterAction];
+                [askController addAction:okActino];
+                [self presentViewController:askController animated:YES completion:nil];
+                
+            }
+            
+        }
+    }
     
 }
 

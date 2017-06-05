@@ -11,10 +11,9 @@
 #import "DataController.h"
 #import "OHMoneyRunContent.h"
 @import Charts;
+@import GoogleMobileAds;
 
-
-
-@interface AnalysisViewController ()<ChartViewDelegate,IChartAxisValueFormatter>
+@interface AnalysisViewController ()<ChartViewDelegate,IChartAxisValueFormatter,GADInterstitialDelegate>
 {
 
     __block NSMutableArray *pieChartEntries;
@@ -31,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet PieChartView *pieChartView;
 @property (nonatomic) HorizontalBarChartView *barChartView;
 @property (nonatomic) UIScrollView *scView;
+@property (nonnull) GADInterstitial *interstitial;
 
 @end
 
@@ -40,6 +40,9 @@
 {
     self = [super init];
     if (self) {
+        
+        
+        
 
     }
     return self;
@@ -47,6 +50,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     
     dc = [DataController sharedInstance];
     pieChartEntries = [NSMutableArray new];
@@ -78,6 +83,15 @@
     
     self.dateRangSegment.tintColor = OHSystemBrownColor;
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //background
+        self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-9825074378768377/7294923648"];
+        self.interstitial.delegate = self;
+        
+        
+    });
+    
+    
     
     
 }
@@ -100,6 +114,14 @@
     [self setConstranis];
     
     
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+   [self.interstitial loadRequest:[GADRequest request]];
+    if (self.interstitial.isReady) {
+        [self.interstitial presentFromRootViewController:self];
+    }
 }
 
 - (void) getDataFromCoreDataWithRange:(NSInteger) index {
@@ -328,10 +350,33 @@
     
 }
 
+#pragma mark - GADDelegate 
+
+- (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"can't get ad");
+    
+}
+
+- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
+  
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+-(void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    self.interstitial.delegate = nil;
 }
 
 /*

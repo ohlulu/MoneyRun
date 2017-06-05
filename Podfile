@@ -3,13 +3,17 @@
 project 'Acount1.0.xcodeproj'
 
 target 'Acount1.0' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+
   use_frameworks!
   pod 'Charts'
   pod 'FSCalendar'
-  use_frameworks!
+
   pod 'Fabric'
   pod 'Crashlytics'
+  
+  pod 'Firebase'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob’
 
 
   target 'Acount1.0Tests' do

@@ -9,6 +9,7 @@
 #import "TabBarViewController.h"
 #import "AddViewController.h"
 #import "OHMoneyRunContent.h"
+@import Firebase;
 @interface TabBarViewController ()
 {
     UIButton *addButton;
@@ -63,6 +64,8 @@
 
 -(IBAction)pushAddView:(UIButton *)sender {
     NSLog(@"pushAddView");
+    
+    [FIRAnalytics logEventWithName:@"addBtnPressEven" parameters:nil];
     
     AddViewController *addVC = [self.storyboard instantiateViewControllerWithIdentifier:@"addViewController"];
     
