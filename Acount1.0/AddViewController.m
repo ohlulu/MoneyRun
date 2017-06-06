@@ -41,6 +41,7 @@
 @property (weak, nonatomic) IBOutlet UIView *addGreenView;
 @property (weak, nonatomic) IBOutlet UIView *whiteBoard;
 
+
 @end
 
 @implementation AddViewController
@@ -149,6 +150,7 @@
     dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateStyle:NSDateFormatterLongStyle];
     [dateFormat setTimeStyle:NSDateFormatterNoStyle];
+        
     
     if (self.presentingViewController) {
         
@@ -267,6 +269,13 @@
 
 #pragma mark - UIelement
 
+- (IBAction)calendarBtnClick:(UIButton *)sender {
+    [self selectDataWIthFSCalendar];
+}
+- (IBAction)dateStringBtnClick:(UIButton *)sender {
+    [self selectDataWIthFSCalendar];
+}
+
 - (IBAction)cancel:(id)sender {
     
     [self.moneyText resignFirstResponder];
@@ -348,7 +357,7 @@
     
 }
 
-- (IBAction)selectDataWIthFSCalendar:(UIButton *)sender {
+- (void)selectDataWIthFSCalendar {
 
     
     CalendarViewController *pic = [[CalendarViewController alloc] init];
@@ -392,6 +401,11 @@
     
 }
 
+- (void) imageClick:(UITapGestureRecognizer *)sender{
+    NSLog(@"123 %@",sender);
+    
+}
+
 #pragma mark - CalendarViewControllerDelegate
 -(void)calendarViewController:(UIViewController *)view didSelectDate:(NSDate *)date{
     
@@ -408,6 +422,8 @@
     [calendarView setHidden:YES];
     
 }
+
+
 
 #pragma mark - UITextFieldTextDidChangeNotification
 

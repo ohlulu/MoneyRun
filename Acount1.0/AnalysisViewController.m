@@ -16,13 +16,14 @@
 @interface AnalysisViewController ()<ChartViewDelegate,IChartAxisValueFormatter,GADInterstitialDelegate>
 {
 
+    DataController *dc;
     __block NSMutableArray *pieChartEntries;
     __block NSMutableArray *barChartyValue;
-    DataController *dc;
     __block NSArray<NSString *> *xVauleLabel;
     NSInteger barDataCount;
     NSDateFormatter *formatMonth;
     NSDateFormatter *formatYear;
+    NSCalendar *calendar;
     
 }
 
@@ -51,9 +52,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
     dc = [DataController sharedInstance];
+    
+//    calendar = [NSCalendar currentCalendar];
+
+    
+    
     pieChartEntries = [NSMutableArray new];
     barChartyValue = [NSMutableArray new];
     xVauleLabel = [NSArray new];

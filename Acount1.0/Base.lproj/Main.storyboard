@@ -250,7 +250,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIX-aw-wFr">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SEF-jT-SlC">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="test" translatesAutoresizingMaskIntoConstraints="NO" id="SEF-jT-SlC">
                                                         <rect key="frame" x="2" y="2" width="40" height="40"/>
                                                     </imageView>
                                                 </subviews>
@@ -310,19 +310,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bgK-L6-snF">
                                 <rect key="frame" x="25" y="143" width="334" height="40"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.png" translatesAutoresizingMaskIntoConstraints="NO" id="5yK-Jf-YOg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-pu-dRb">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="5nH-cQ-Z7i"/>
-                                            <constraint firstAttribute="height" constant="40" id="cS7-UZ-SMZ"/>
+                                            <constraint firstAttribute="height" constant="40" id="AON-Dk-26d"/>
+                                            <constraint firstAttribute="width" constant="40" id="mCW-ol-LBh"/>
                                         </constraints>
-                                    </imageView>
+                                        <state key="normal" image="calendar.png"/>
+                                        <connections>
+                                            <action selector="calendarBtnClick:" destination="Ci9-jD-n1B" eventType="touchUpInside" id="Xo8-cW-s6g"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGO-ts-ysN">
                                         <rect key="frame" x="65" y="5" width="161" height="30"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <state key="normal" title="Butto"/>
                                         <connections>
-                                            <action selector="selectDataWIthFSCalendar:" destination="Ci9-jD-n1B" eventType="touchUpInside" id="IVc-MG-WBl"/>
+                                            <action selector="dateStringBtnClick:" destination="Ci9-jD-n1B" eventType="touchUpInside" id="PdE-SR-wcL"/>
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y2z-JF-6ei">
@@ -338,11 +342,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="y2z-JF-6ei" secondAttribute="trailing" id="5BN-hm-kjf"/>
+                                    <constraint firstAttribute="bottom" secondItem="IHg-pu-dRb" secondAttribute="bottom" id="ABl-B7-GHZ"/>
+                                    <constraint firstItem="IHg-pu-dRb" firstAttribute="leading" secondItem="bgK-L6-snF" secondAttribute="leading" id="KhS-Y3-R3K"/>
                                     <constraint firstAttribute="height" constant="40" id="QN0-3L-Tnx"/>
-                                    <constraint firstItem="5yK-Jf-YOg" firstAttribute="top" secondItem="bgK-L6-snF" secondAttribute="top" id="XBJ-Mx-NWp"/>
-                                    <constraint firstItem="dGO-ts-ysN" firstAttribute="leading" secondItem="5yK-Jf-YOg" secondAttribute="trailing" constant="25" id="bQw-as-ffw"/>
-                                    <constraint firstItem="5yK-Jf-YOg" firstAttribute="leading" secondItem="bgK-L6-snF" secondAttribute="leading" id="tzY-3M-6bw"/>
-                                    <constraint firstAttribute="bottom" secondItem="5yK-Jf-YOg" secondAttribute="bottom" id="zla-j0-47b"/>
+                                    <constraint firstItem="IHg-pu-dRb" firstAttribute="top" secondItem="bgK-L6-snF" secondAttribute="top" id="rvV-X9-ujL"/>
+                                    <constraint firstItem="dGO-ts-ysN" firstAttribute="leading" secondItem="IHg-pu-dRb" secondAttribute="trailing" constant="25" id="vWZ-D7-ApR"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcU-hF-kap">

@@ -193,20 +193,17 @@
 
 - (void) setSelectMonthButtonTitleWithIncrease:(BOOL) isIncrease {
     
-    // Get currentDate's NSTimeInterval form 1970
-    NSTimeInterval currentMonth = [selectDate timeIntervalSince1970];
-    
     // Get NSCalendar
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    // Get how much days in current month
-    NSRange days = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:selectDate];
-    NSLog(@"days %ld",days.length);
+    NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
+    NSDateComponents *components = [calendar components:unit fromDate:selectDate];
     
     if (isIncrease) {
-        selectDate = [NSDate dateWithTimeIntervalSince1970:currentMonth+60*60*24*days.length];
+        components.month++;
+        selectDate = [calendar dateFromComponents:components];
     } else {
-        selectDate = [NSDate dateWithTimeIntervalSince1970:currentMonth-60*60*24*days.length];
+        components.month--;
+        selectDate = [calendar dateFromComponents:components];
     }
     
     NSString *currentMonthString = [formatMonth stringFromDate:selectDate];
@@ -338,6 +335,7 @@
     
     // Title in Section header
     [dateLabel setText:self.datas[section].title];
+    
     NSString *totalMoney = [NSString localizedStringWithFormat:@"$%.0f",[[NSNumber numberWithInteger:total] floatValue]];
     [totalLabel setText:totalMoney];
     

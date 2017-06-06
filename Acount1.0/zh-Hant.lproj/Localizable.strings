@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Acount1.0
+
+  Created by Ohlulu on 2017/6/6.
+  Copyright © 2017年 ohlulu. All rights reserved.
+*/
+
+"Cancel" = "取消";
+
+"Today" = "今天";
+"Yesterday" = "昨天";
+"Tomorrow" = "明天";

@@ -129,12 +129,24 @@
     
     NSMutableArray<CustomData *> *datas = [[NSMutableArray alloc] init];
     
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
     [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        CustomData *item = [CustomData new];
-        item.title = [obj valueForKey:@"formatDate"];
-        item.items = [[self loadItemsInDate:[obj valueForKey:@"formatDate"]] mutableCopy];
-        [datas addObject:item];
+        CustomData *section = [CustomData new];
+        
+        section.items = [[self loadItemsInDate:[obj valueForKey:@"formatDate"]] mutableCopy];
+        
+        if ([calendar isDateInToday:section.items[0].trueDate]) {
+            section.title = NSLocalizedString(@"Today", @"Today");
+        } else if ([calendar isDateInYesterday:section.items[0].trueDate]) {
+            section.title = NSLocalizedString(@"Yesterday", @"Yesterday");
+        } else if ([calendar isDateInTomorrow:section.items[0].trueDate]) {
+            section.title = NSLocalizedString(@"Tomorrow", @"Tomorrow");
+        } else {
+            section.title = [obj valueForKey:@"formatDate"];
+        }
+        [datas addObject:section];
         
     }];
 
@@ -250,11 +262,51 @@
     
 }
 
+- (NSArray *) getTotalMoneyGroupByCategoryNameFromDate:(NSDate *) startDate Todate:(NSDate *)endDate {
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:ENTITY_ITEM];
+    NSPredicate *predicate = nil;
+    
+    
+    predicate = [NSPredicate predicateWithFormat:@"trueDate >= %@ AND trueDate <= %@",startDate,endDate];
+
+    [fetchRequest setPredicate:predicate];
+    
+    NSExpressionDescription *ex = [[NSExpressionDescription alloc] init];
+    [ex setExpression:[NSExpression expressionWithFormat:@"@sum.money"]];
+    [ex setName:@"sum"];
+    [ex setExpressionResultType:NSDecimalAttributeType];
+    
+    [fetchRequest setPropertiesToFetch:[NSArray arrayWithObjects:@"category.name", ex, nil]];
+    [fetchRequest setPropertiesToGroupBy:[NSArray arrayWithObject:@"category.name"]];
+    
+    [fetchRequest setResultType:NSDictionaryResultType ];
+    
+    NSError *err;
+    NSArray *results = [_managedObjectContext executeFetchRequest:fetchRequest error:&err];
+    if (err) {
+        NSLog(@"fetch err %@",err);
+    }
+    
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"sum" ascending:YES];
+    
+    results = [results sortedArrayUsingDescriptors:@[sortDescriptor]];
+    
+    NSLog(@"results %@", results);
+    
+    return results;
+    
+    return nil;
+}
+
 
 - (NSArray *) getTotalMoneyGroupByCategoryNameWithDateRang:(NSString *) dateRang withFormatYear:(NSString *)formatYear segment:(NSInteger)segment{
     NSLog(@"moth %@",dateRang);
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:ENTITY_ITEM];
     NSPredicate *predicate = nil;
+//    NSDate *today = [NSDate date];
+//    predicate = [NSPredicate predicateWithFormat:@"trueDate >= %@ AND trueDate <= %@",today,today];
     switch (segment) {
         case 0:
             predicate= [NSPredicate predicateWithFormat:@"formatDate CONTAINS[cd] %@",formatYear];

@@ -57,4 +57,6 @@
 
 - (NSArray *) getTotalMoneyGroupByCategoryNameWithDateRang:(NSString *) dateRang withFormatYear:(NSString *)formatYear segment:(NSInteger)segment;
 
+- (NSArray *) getTotalMoneyGroupByCategoryNameFromDate:(NSDate *) startDate Todate:(NSDate *)endDate;
+
 @end
