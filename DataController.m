@@ -7,8 +7,12 @@
 //
 
 #import "DataController.h"
+#import "OHMoneyRunContent.h"
 
 @implementation DataController
+{
+    NSCalendar *calendar;
+}
 
 @synthesize persistentContainer = _persistentContainer;
 @synthesize managedObjectContext = _managedObjectContext;
@@ -20,6 +24,7 @@
     self = [super init];
     if (self) {
        _managedObjectContext = [self connectCoreData];
+        calendar = [NSCalendar currentCalendar];
     }
     return self;
 }
@@ -101,6 +106,81 @@
     
 }
 
+#pragma mark - Get total money gourp by month
+
+- (NSMutableArray *) getTotalMoneyGroupByMonth {
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:ENTITY_ITEM];
+    
+    NSEntityDescription *itemEntity = [NSEntityDescription entityForName:ENTITY_ITEM inManagedObjectContext:_managedObjectContext];
+    NSAttributeDescription *itemWithFormatDate = [itemEntity.attributesByName objectForKey:@"formatDate"];
+    [fetchRequest setPropertiesToFetch:[NSArray arrayWithObjects:itemWithFormatDate,nil]];
+    [fetchRequest setPropertiesToGroupBy:@[itemWithFormatDate]];
+    [fetchRequest setResultType:NSDictionaryResultType];
+    
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"trueDate" ascending:NO];
+    [fetchRequest setSortDescriptors:@[sort]];
+    
+    NSError *err;
+    NSArray *results = [_managedObjectContext executeFetchRequest:fetchRequest error:&err];
+    if (err) {
+        NSLog(@"getTotalMoneyGroupByMonth Error : %@",err);
+    }
+    
+    
+    __block NSString *monthTemp;
+
+    __block NSMutableArray *numberArray = [NSMutableArray new];
+    
+    [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSDateFormatter *format = [NSDateFormatter new];
+        [format setDateStyle:NSDateFormatterLongStyle];
+        [format setTimeStyle:NSDateFormatterNoStyle];
+        
+        NSDate *date = [format dateFromString:[obj valueForKey:@"formatDate"]];
+        
+        [format setDateFormat:[NSDateFormatter dateFormatFromTemplate:FORMAT_MONTH
+                                                              options:0
+                                                               locale:[NSLocale currentLocale]]];
+        NSString *monthString = [format stringFromDate:date];
+        
+        [format setDateFormat:[NSDateFormatter dateFormatFromTemplate:FORMAT_YEAR
+                                                              options:0
+                                                               locale:[NSLocale currentLocale]]];
+        NSString *yearString = [format stringFromDate:date];
+        
+        if (![monthTemp isEqualToString:monthString] ) {
+            NSDictionary *data = @{@"year":yearString,@"month":monthString,@"money":[self sumOfMoneyWithMonth:monthString andYear:yearString]};
+            [numberArray addObject:data];
+            monthTemp = monthString;
+        }
+    }];
+    
+    __block NSArray *arr = [numberArray valueForKeyPath:@"@distinctUnionOfObjects.year"];
+    arr = [arr sortedArrayUsingComparator:^NSComparisonResult(NSString *  _Nonnull obj1, NSString *  _Nonnull obj2) {
+        return [obj2 compare:obj1 options:NSNumericSearch];
+    }];
+    __block NSMutableArray *formatDatas = [NSMutableArray new];
+    
+    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+       
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"year = %@",obj];
+        [formatDatas addObject:[numberArray filteredArrayUsingPredicate:predicate]];
+        
+    }];
+    NSLog(@"format Data %@" ,formatDatas);
+    
+    
+//    NSLog(@"arr %@",arr);
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"year = %@",arr[1]];
+//    NSLog(@"arr Wtih year %@",[numberArray filteredArrayUsingPredicate:predicate]);
+//    
+//    NSLog(@"numberArray %@",numberArray);
+
+    return formatDatas;
+}
+
 #pragma mark - Select Item group by Date
 
 - (NSMutableArray<CustomData *> *) loadItemsGroupByFormatMonth:(NSString *) formatMonth andFormatYear:(NSString *)formatYear {
@@ -127,10 +207,12 @@
     NSError *err;
     NSArray *results = [_managedObjectContext executeFetchRequest:fetchRequest error:&err];
     
+    if (err) {
+        NSLog(@"load Items Group By FormatDate Error: %@",err);
+    }
+    
     NSMutableArray<CustomData *> *datas = [[NSMutableArray alloc] init];
-    
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
+
     [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         CustomData *section = [CustomData new];
@@ -149,10 +231,6 @@
         [datas addObject:section];
         
     }];
-
-    if (err) {
-        NSLog(@"load Items Group By FormatDate Error: %@",err);
-    }
     
     return datas;
     
@@ -180,7 +258,7 @@
     
     [fetchRequest setPropertiesToFetch:[NSArray arrayWithObject:expressionDescription]];
     
-    // Set contains serch
+    // Creat a predicate to contains serch
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"formatDate CONTAINS[cd] %@ AND formatDate CONTAINS[cd] %@",month,year];
     [fetchRequest setPredicate:predicate];
     

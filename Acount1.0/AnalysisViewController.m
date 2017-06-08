@@ -27,37 +27,21 @@
     
 }
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *dateRangSegment;
-@property (weak, nonatomic) IBOutlet PieChartView *pieChartView;
-@property (nonatomic) HorizontalBarChartView *barChartView;
-@property (nonatomic) UIScrollView *scView;
+@property (nonatomic) PieChartView * _Nullable pieChartView;
+@property (nonatomic) HorizontalBarChartView * _Nullable barChartView;
+@property (nonatomic) UIScrollView * _Nullable scView;
 @property (nonnull) GADInterstitial *interstitial;
 
 @end
 
 @implementation AnalysisViewController
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-        
-        
-
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     dc = [DataController sharedInstance];
-    
-//    calendar = [NSCalendar currentCalendar];
 
-    
-    
     pieChartEntries = [NSMutableArray new];
     barChartyValue = [NSMutableArray new];
     xVauleLabel = [NSArray new];
@@ -75,17 +59,17 @@
                                                                locale:[NSLocale currentLocale]]];
 
     self.scView = [[UIScrollView alloc] init];
-//    self.scView.backgroundColor = UIColor.lightGrayColor;
     self.scView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 800);
     self.scView.pagingEnabled = YES;
     [self.view addSubview:self.scView];
     
     self.barChartView = [[HorizontalBarChartView alloc] init];
-    
+    self.pieChartView = [[PieChartView alloc] init];
+    [self.view addSubview:self.pieChartView];
     
     [self.scView addSubview:self.barChartView];
     
-    self.dateRangSegment.tintColor = OHSystemBrownColor;
+    
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //background
@@ -294,7 +278,7 @@
     
 }
 
--(NSString *)stringForValue:(double)value axis:(ChartAxisBase *)axis{
+-(NSString *)stringForValue:(double)value axis:(ChartAxisBase *_Nullable)axis{
     
     if ((NSInteger)value%10 != 0) {
         return @"";
@@ -308,14 +292,10 @@
 
 - (void) setConstranis {
     
-    self.dateRangSegment.translatesAutoresizingMaskIntoConstraints = NO;
+    
     self.pieChartView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [self.dateRangSegment.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:8].active = YES;
-    [self.dateRangSegment.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:10].active = YES;
-    [self.dateRangSegment.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-10].active = YES;
-    
-    [self.pieChartView.topAnchor constraintEqualToAnchor:self.dateRangSegment.bottomAnchor constant:10].active = YES;
+    [self.pieChartView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:15].active = YES;
     [self.pieChartView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
     [self.pieChartView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
     
@@ -340,26 +320,9 @@
     [self.barChartView.bottomAnchor constraintEqualToAnchor:self.scView.bottomAnchor constant:-20].active = YES;
     
 }
-- (IBAction)segmentValueChange:(UISegmentedControl *)sender {
-    NSLog(@"index %ld",sender.selectedSegmentIndex);
-    
-    self.barChartView.data = nil;
-    
-    [self getDataFromCoreDataWithRange:sender.selectedSegmentIndex];
-    [self setPieChartData];
-    [self setBarChartData];
-    
-    [self pieChartSetting];
-    [self barChartSetting];
-    
-}
 
-#pragma mark - GADDelegate 
 
-- (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error {
-    NSLog(@"can't get ad");
-    
-}
+#pragma mark - GADDelegate
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
   

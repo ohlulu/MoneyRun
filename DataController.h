@@ -46,8 +46,10 @@
 - (void) insertItem:(Item *)item WithCategorylName:(NSString *)name;
 
 // Load items group by attributes in formatDate
-//- (NSMutableArray *) loadItemsGroupByFormatDate:(NSString *) formatDate;
 - (NSMutableArray<CustomData *> *) loadItemsGroupByFormatMonth:(NSString *) formatMonth andFormatYear:(NSString *)formatYear;
+
+// Get total money gourp by month
+- (NSMutableArray *) getTotalMoneyGroupByMonth;
 
 // Get total money group by month
 - (NSNumber *) sumOfMoneyWithMonth:(NSString *) month andYear:(NSString *) year;

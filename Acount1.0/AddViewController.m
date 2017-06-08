@@ -73,8 +73,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
-    [self.moneyText resignFirstResponder];
+
     [self.tabBarController.tabBar setHidden:YES];
     
     // Get all category
@@ -117,7 +116,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.moneyText becomeFirstResponder];
+//    [self.moneyText becomeFirstResponder];
 }
 
 - (void)viewDidLoad {
@@ -145,6 +144,7 @@
     self.moneyText.tintColor = [UIColor clearColor];
     self.moneyText.backgroundColor = OHSystemBrownColor;
     self.moneyText.textColor = [UIColor whiteColor];
+    self.addGreenView.backgroundColor = OHSystemBrownColor;
     
     // Init date format
     dateFormat = [[NSDateFormatter alloc] init];
@@ -196,6 +196,11 @@
     
     // Set label's delegate
     self.moneyText.delegate = self;
+    
+    // Set Table view style
+    self.categoryTable.rowHeight = 50;
+    self.categoryTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     
     [self.categoryTable.bottomAnchor constraintEqualToAnchor:self.addButton.topAnchor constant:-20].active = YES;
     
@@ -439,13 +444,14 @@
     [intString replaceOccurrencesOfString:@"," withString:@"" options:NSLiteralSearch range:NSMakeRange(0, intString.length)];
     
     if ([intString integerValue] > 0) {
+        
         [self.addButton setEnabled:YES];
-        // rgba(58, 180, 58, 0.84)
         [UIView animateWithDuration:0.25 animations:^{
             self.addButton.backgroundColor = OHSaveButtonActionColor;
         }];
         
     } else if ([intString intValue] == 0 ) {
+        [self.addButton setEnabled:NO];
         [UIView animateWithDuration:0.25 animations:^{
             self.addButton.backgroundColor = [UIColor lightGrayColor];
         }];

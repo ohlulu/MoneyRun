@@ -30,6 +30,8 @@
 		507BDD951ED70804005E1ABA /* play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 507BDD931ED70804005E1ABA /* play@3x.png */; };
 		507BDD971ED726A7005E1ABA /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 507BDD961ED726A7005E1ABA /* list@2x.png */; };
 		507FCDE81EE69EB80099EC76 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507FCDEA1EE69EB80099EC76 /* Localizable.strings */; };
+		507FCDEE1EE6D3030099EC76 /* AnalysisTableViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCDED1EE6D3030099EC76 /* AnalysisTableViewcontroller.m */; };
+		507FCDF11EE831710099EC76 /* AnalysisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCDF01EE831710099EC76 /* AnalysisTableViewCell.m */; };
 		50B5BF151EBB1F5D0059F59C /* CustomData.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5BF141EBB1F5D0059F59C /* CustomData.m */; };
 		50B87A8C1EDEEE96000A8506 /* analysis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B87A8A1EDEEE96000A8506 /* analysis@2x.png */; };
 		50B87A8D1EDEEE96000A8506 /* analysis@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B87A8B1EDEEE96000A8506 /* analysis@3x.png */; };
@@ -137,6 +139,10 @@
 		507BDD961ED726A7005E1ABA /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list@2x.png"; path = "../list@2x.png"; sourceTree = "<group>"; };
 		507FCDE91EE69EB80099EC76 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		507FCDEB1EE69EBC0099EC76 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		507FCDEC1EE6D3030099EC76 /* AnalysisTableViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisTableViewcontroller.h; sourceTree = "<group>"; };
+		507FCDED1EE6D3030099EC76 /* AnalysisTableViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisTableViewcontroller.m; sourceTree = "<group>"; };
+		507FCDEF1EE831710099EC76 /* AnalysisTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisTableViewCell.h; sourceTree = "<group>"; };
+		507FCDF01EE831710099EC76 /* AnalysisTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisTableViewCell.m; sourceTree = "<group>"; };
 		50B5BF131EBB1F5D0059F59C /* CustomData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomData.h; sourceTree = "<group>"; };
 		50B5BF141EBB1F5D0059F59C /* CustomData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomData.m; sourceTree = "<group>"; };
 		50B87A8A1EDEEE96000A8506 /* analysis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "analysis@2x.png"; sourceTree = "<group>"; };
@@ -272,6 +278,10 @@
 			children = (
 				503593861EA8E4D5005C5AB3 /* AnalysisViewController.h */,
 				503593871EA8E4D5005C5AB3 /* AnalysisViewController.m */,
+				507FCDEC1EE6D3030099EC76 /* AnalysisTableViewcontroller.h */,
+				507FCDED1EE6D3030099EC76 /* AnalysisTableViewcontroller.m */,
+				507FCDEF1EE831710099EC76 /* AnalysisTableViewCell.h */,
+				507FCDF01EE831710099EC76 /* AnalysisTableViewCell.m */,
 			);
 			name = Analysis;
 			sourceTree = "<group>";
@@ -785,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				502DAD981EC0456F00707524 /* NormalCell.m in Sources */,
+				507FCDF11EE831710099EC76 /* AnalysisTableViewCell.m in Sources */,
 				505738B61EE2918F0088D330 /* OHMoneyRunContent.m in Sources */,
 				50F4C71E1EB83537002BB65C /* Category+CoreDataProperties.m in Sources */,
 				505DF4131E9CB612002FA726 /* Acount1_0.xcdatamodeld in Sources */,
@@ -802,6 +813,7 @@
 				505DF40D1E9CB612002FA726 /* ViewController.m in Sources */,
 				503593821EA8E124005C5AB3 /* HistoryViewController.m in Sources */,
 				505DF40A1E9CB612002FA726 /* AppDelegate.m in Sources */,
+				507FCDEE1EE6D3030099EC76 /* AnalysisTableViewcontroller.m in Sources */,
 				505DF4071E9CB612002FA726 /* main.m in Sources */,
 				50BDF7E81EA753050045D79D /* DataController.m in Sources */,
 			);

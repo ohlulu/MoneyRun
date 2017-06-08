@@ -62,16 +62,8 @@
     
 }
 
-//-(id<UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
-//    NSLog(@"catch");
-//    return nil;
-//}
-
-
-
 - (void)viewDidLoad {
-    
-    
+
     
     [super viewDidLoad];
     
@@ -228,18 +220,6 @@
     
 }
 
-
-// 每一個 section 的 header text
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    
-    if (section == 0) {
-        return nil;
-    } else {
-        return self.datas[section].title;
-    }
-    
-}
-
 // 每一個 section 有幾筆資料，預設只有一個section
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -309,29 +289,21 @@
     }
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 34)];
-//    view.translatesAutoresizingMaskIntoConstraints = NO;
-//    [view.widthAnchor constraintEqualToConstant:[UIScreen mainScreen].bounds.size.width].active = YES;
-//    [view.heightAnchor constraintEqualToConstant:30].active = YES;
-
+    
     UILabel *dateLabel = [[UILabel alloc] init];
     UILabel *totalLabel = [[UILabel alloc] init];
     
-    [dateLabel setFont:[UIFont systemFontOfSize:18]];
-    [totalLabel setFont:[UIFont systemFontOfSize:20]];
+    [dateLabel setFont:[UIFont systemFontOfSize:16]];
+    [totalLabel setFont:[UIFont systemFontOfSize:18]];
     [totalLabel setTextAlignment:NSTextAlignmentRight];
     
-    // rgb(216, 61, 22) -> rgb(221, 37, 4)
     totalLabel.textColor = OHHeaderViewTitleColor;
     
     // Total money in Section header
     __block NSInteger total = 0;
     [self.datas[section].items enumerateObjectsUsingBlock:^(Item * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
         total += obj.money;
-        
     }];
-    
-//    NSInteger sum = [[self.datas[section].items valueForKeyPath:@"@sum.money"] integerValue];
     
     // Title in Section header
     [dateLabel setText:self.datas[section].title];

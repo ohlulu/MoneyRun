@@ -8,8 +8,9 @@
 
 #import "CalendarViewController.h"
 #import <FSCalendar/FSCalendar.h>
+#import "OHMoneyRunContent.h"
 
-@interface CalendarViewController ()<FSCalendarDelegate,FSCalendarDataSource>
+@interface CalendarViewController ()<FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance>
 {
     
     UIView *grayView;
@@ -29,19 +30,32 @@
     gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 
     grayView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    grayView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5];
+    grayView.backgroundColor = OHCalendarGrayAlphColor;//[UIColor colorWithRed:95/255.0 green:98/255.0 blue:99/255.0 alpha:0.3];//[[UIColor grayColor] colorWithAlphaComponent:0.5];
     
     calendar = [[FSCalendar alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, 0)];
     
     calendar.delegate = self;
     calendar.dataSource = self;
 
-//    [calendar setToday:self.today];
+
     [calendar selectDate: self.today];
     calendar.appearance.selectionColor = [UIColor blueColor];
     
     
-    calendar.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:1];
+    calendar.backgroundColor = OHCalendarWhiteColor;
+//    calendar.tintColor = [[UIColor whiteColor] colorWithAlphaComponent:1];
+    
+    // Calendar text color
+    calendar.appearance.headerTitleColor = OHCalendarGrayColor;
+    calendar.appearance.weekdayTextColor = OHCalendarGrayColor;
+    calendar.appearance.titleDefaultColor = OHCalendarGrayColor;
+    
+    // Calendar event background color
+    calendar.appearance.todayColor = OhCalendarBlueColor;
+    calendar.appearance.selectionColor = OHCalendarBrownColor;
+    calendar.appearance.titleTodayColor = [[UIColor whiteColor] colorWithAlphaComponent:1];
+    calendar.appearance.titleSelectionColor = [[UIColor whiteColor] colorWithAlphaComponent:1];
+    
     [self.view addSubview:grayView];
     
     calendar.translatesAutoresizingMaskIntoConstraints = NO;
@@ -67,7 +81,7 @@
 {
 
     if ([gregorianCalendar isDateInToday:date]) {
-        return @"今天";
+        return @"T";
     }
     return nil;
 }
@@ -93,17 +107,27 @@
     NSString *string = [dateFormat stringFromDate:date];
     NSLog(@"Date is %@", string);
     [self.delegate calendarViewController:self didSelectDate:date];
-//    [NSThread sleepForTimeInterval:0.15];
+    
+    [self->calendar selectDate:date];
+    [NSThread sleepForTimeInterval:0.35];
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+- (void)calendar:(FSCalendar *)calendar boundingRectWillChange:(CGRect)bounds animated:(BOOL)animated{
+    NSLog(@"boundingRectWillChange");
+}
 
 
+#pragma mark - FSCalendarDelegateAppearance
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+- (UIColor *)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance titleSelectionColorForDate:(NSDate *)date {
+    return [[UIColor whiteColor] colorWithAlphaComponent:1];
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"calendarViewController touch");
     
 }
 
