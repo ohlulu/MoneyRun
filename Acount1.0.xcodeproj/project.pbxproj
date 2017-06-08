@@ -12,7 +12,6 @@
 		502DAD981EC0456F00707524 /* NormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502DAD971EC0456F00707524 /* NormalCell.m */; };
 		503593821EA8E124005C5AB3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503593811EA8E124005C5AB3 /* HistoryViewController.m */; };
 		503593851EA8E13D005C5AB3 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503593841EA8E13D005C5AB3 /* AddViewController.m */; };
-		503593881EA8E4D5005C5AB3 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503593871EA8E4D5005C5AB3 /* AnalysisViewController.m */; };
 		503593901EA9F3CF005C5AB3 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5035938F1EA9F3CF005C5AB3 /* TabBarViewController.m */; };
 		5056B1311EC1F6E30095D967 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056B1301EC1F6E30095D967 /* CalendarViewController.m */; };
 		505738AE1EE2671D0088D330 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 505738B01EE2671D0088D330 /* InfoPlist.strings */; };
@@ -105,8 +104,6 @@
 		503593811EA8E124005C5AB3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		503593831EA8E13D005C5AB3 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		503593841EA8E13D005C5AB3 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
-		503593861EA8E4D5005C5AB3 /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisViewController.h; sourceTree = "<group>"; };
-		503593871EA8E4D5005C5AB3 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisViewController.m; sourceTree = "<group>"; };
 		5035938E1EA9F3CF005C5AB3 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		5035938F1EA9F3CF005C5AB3 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		5056B12F1EC1F6E30095D967 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -276,8 +273,6 @@
 		5035938B1EA9B43D005C5AB3 /* Analysis */ = {
 			isa = PBXGroup;
 			children = (
-				503593861EA8E4D5005C5AB3 /* AnalysisViewController.h */,
-				503593871EA8E4D5005C5AB3 /* AnalysisViewController.m */,
 				507FCDEC1EE6D3030099EC76 /* AnalysisTableViewcontroller.h */,
 				507FCDED1EE6D3030099EC76 /* AnalysisTableViewcontroller.m */,
 				507FCDEF1EE831710099EC76 /* AnalysisTableViewCell.h */,
@@ -803,7 +798,6 @@
 				50F4C71D1EB83537002BB65C /* Category+CoreDataClass.m in Sources */,
 				503593901EA9F3CF005C5AB3 /* TabBarViewController.m in Sources */,
 				5056B1311EC1F6E30095D967 /* CalendarViewController.m in Sources */,
-				503593881EA8E4D5005C5AB3 /* AnalysisViewController.m in Sources */,
 				50F4C7231EB84C98002BB65C /* Item+CoreDataClass.m in Sources */,
 				502DAD951EBFFCF000707524 /* TopCell.m in Sources */,
 				503593851EA8E13D005C5AB3 /* AddViewController.m in Sources */,
