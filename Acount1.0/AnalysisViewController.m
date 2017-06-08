@@ -27,9 +27,9 @@
     
 }
 
-@property (nonatomic) PieChartView * _Nullable pieChartView;
-@property (nonatomic) HorizontalBarChartView * _Nullable barChartView;
-@property (nonatomic) UIScrollView * _Nullable scView;
+@property (nonatomic) PieChartView *pieChartView;
+@property (nonatomic) HorizontalBarChartView *barChartView;
+@property (nonatomic) UIScrollView *scView;
 @property (nonnull) GADInterstitial *interstitial;
 
 @end
