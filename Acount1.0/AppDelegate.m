@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 #import "AddViewController.h"
 #import "HistoryViewController.h"
-#import "AnalysisViewController.h"
+//#import "AnalysisViewController.h"
 #import "DataController.h"
 #import "OHMoneyRunContent.h"
 #import <Fabric/Fabric.h>

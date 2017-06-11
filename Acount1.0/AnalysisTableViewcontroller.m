@@ -8,26 +8,37 @@
 
 #import "AnalysisTableViewcontroller.h"
 #import "AnalysisTableViewCell.h"
-#import "AnalysisViewController.m"
+#import "AnalysisDetailViewController.h"
 #import "OHMoneyRunContent.h"
 #import "DataController.h"
+#import "TabBarViewController.h"
+#import "SectionHeaderView.h"
 
 @interface AnalysisTableViewcontroller () <UITableViewDelegate, UITableViewDataSource>
 {
     DataController *dc;
     NSMutableArray *datas;
+    NSMutableArray *datasPercent;
 }
 
-@property (nonatomic) UIButton *categoryImageBtn;
-@property (nonatomic) UIButton *categoryNameBtn;
-@property (nonatomic) UISegmentedControl *segment;
-@property (nonatomic) UIStackView *stackWithImageAndName;
+//@property (nonatomic) UIButton *categoryImageBtn;
+//@property (nonatomic) UIButton *categoryNameBtn;
+//@property (nonatomic) UISegmentedControl *segment;
+//@property (nonatomic) UIStackView *stackWithImageAndName;
 @property (nonatomic) UITableView *totalTableView;
 
 
 @end
 
 @implementation AnalysisTableViewcontroller
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+    [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_ADDBUTTON_NOTIFICATION object:nil];
+}
 
 - (void)viewDidLoad {
 
@@ -37,6 +48,8 @@
     dc = [DataController sharedInstance];
     datas = [dc getTotalMoneyGroupByMonth];
     
+    
+    /**
     // Image Button
     self.categoryImageBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.categoryImageBtn setBackgroundImage:[UIImage imageNamed:@"food"] forState:UIControlStateNormal];
@@ -56,12 +69,15 @@
     self.stackWithImageAndName.alignment = UIStackViewAlignmentCenter;
     self.stackWithImageAndName.spacing = 15;
     [self.view addSubview:self.stackWithImageAndName];
+    */
     
+    /**
     // Segment
     self.segment = [[UISegmentedControl alloc] initWithItems:@[@"自訂",@"月",@"半年",@"一年"]];
     self.segment.selectedSegmentIndex = 1;
     [self.segment addTarget:self action:@selector(segmentValueChange:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.segment];
+     */
     
     // TableView
     self.totalTableView = [[UITableView alloc] init];
@@ -70,7 +86,6 @@
     self.totalTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.totalTableView];
     
-    
     [self setConstrains];
 }
 
@@ -78,7 +93,9 @@
 
 - (void) setConstrains {
     
-    CGFloat elementWidth = [UIScreen mainScreen].bounds.size.width-30;
+//    CGFloat elementWidth = [UIScreen mainScreen].bounds.size.width-30;
+    
+    /**
     
     // Stack View
     self.stackWithImageAndName.translatesAutoresizingMaskIntoConstraints = NO;
@@ -97,19 +114,23 @@
     [self.stackWithImageAndName addConstraints:hBtn];
     [self.stackWithImageAndName addConstraints:vImageBtn];
     [self.stackWithImageAndName addConstraints:vNameBtn];
+    */
     
+    /**
     // Segmenet
     self.segment.translatesAutoresizingMaskIntoConstraints = NO;
     [self.segment.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [self.segment.topAnchor constraintEqualToAnchor:self.categoryNameBtn.bottomAnchor constant:15].active = YES;
     [self.segment.widthAnchor constraintEqualToConstant:elementWidth].active = YES;
+    */
     
     // Table View
     self.totalTableView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.totalTableView.widthAnchor constraintEqualToConstant:elementWidth].active = YES;
-    [self.totalTableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [self.totalTableView.bottomAnchor constraintEqualToAnchor:self.bottomLayoutGuide.topAnchor constant:8].active = YES;
-    [self.totalTableView.topAnchor constraintEqualToAnchor:self.segment.bottomAnchor constant:8].active = YES;
+    [self.totalTableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [self.totalTableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+//    [self.totalTableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.totalTableView.bottomAnchor constraintEqualToAnchor:self.bottomLayoutGuide.topAnchor].active = YES;
+    [self.totalTableView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20].active = YES;
     
 }
 
@@ -129,35 +150,38 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 34)];
+    SectionHeaderView *view = [[SectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 34)];
+    view.backgroundColor = [UIColor whiteColor];
     
     
-    UILabel *yearLabel = [[UILabel alloc] init];
-    [yearLabel setFont:[UIFont systemFontOfSize:15]];
-    [yearLabel setText:[datas[section][0] valueForKey:@"year"]];
-    yearLabel.textColor = OHCalendarGrayColor;
+//    UILabel *view.titleLabel = [[UILabel alloc] init];
+    [view.titleLabel setFont:[UIFont systemFontOfSize:15]];
+    [view.titleLabel setText:[datas[section][0] valueForKey:@"year"]];
+    view.titleLabel.textColor = OHSystemBrownAlphaColor;
     
-    UILabel *totalLabel = [[UILabel alloc] init];
-    [totalLabel setFont:[UIFont systemFontOfSize:17]];
-    [totalLabel setTextAlignment:NSTextAlignmentRight];
-    totalLabel.text = [NSString localizedStringWithFormat:@"%0.f",[[datas[section] valueForKeyPath:@"@sum.money"] floatValue]];
-    totalLabel.textColor = OHHeaderViewTitleColor;
+//    UILabel *view.detailLabel = [[UILabel alloc] init];
+    [view.detailLabel setFont:[UIFont systemFontOfSize:17]];
+    [view.detailLabel setTextAlignment:NSTextAlignmentRight];
+    view.detailLabel.text = [NSString localizedStringWithFormat:@"$%0ld",[[datas[section] valueForKeyPath:@"@sum.money"] integerValue]];
+    view.detailLabel.numberOfLines = 0;
+    [view.detailLabel sizeToFit];
+    view.detailLabel.textColor = OHHeaderViewTitleColor;
     
-    [view addSubview:yearLabel];
-    [view addSubview:totalLabel];
+    [view addSubview:view.titleLabel];
+    [view addSubview:view.detailLabel];
     
-    yearLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    totalLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    view.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    view.detailLabel.translatesAutoresizingMaskIntoConstraints = NO;
     
     // Set dateLabel's visualformat
-    NSArray *hYearLabel = [NSLayoutConstraint constraintsWithVisualFormat:@"|-25-[yearLabel(>=100)]" options:0 metrics:0 views:@{@"yearLabel":yearLabel}];
-    NSArray *vYearLabel = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[yearLabel(24)]-5-|" options:0 metrics:0 views:@{@"yearLabel":yearLabel}];
+    NSArray *hYearLabel = [NSLayoutConstraint constraintsWithVisualFormat:@"|-45-[yearLabel(>=80)]" options:0 metrics:0 views:@{@"yearLabel":view.titleLabel}];
+    NSArray *vYearLabel = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[yearLabel(24)]-5-|" options:0 metrics:0 views:@{@"yearLabel":view.titleLabel}];
     [view addConstraints:hYearLabel];
     [view addConstraints:vYearLabel];
     
     //Set totalLabel's visualformat
-    NSArray *hTotalLabel = [NSLayoutConstraint constraintsWithVisualFormat:@"[totalLabel(>=100)]-8-|" options:0 metrics:0 views:@{@"totalLabel":totalLabel}];
-    NSArray *vTotalLabel = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[totalLabel(24)]-5-|" options:0 metrics:0 views:@{@"totalLabel":totalLabel}];
+    NSArray *hTotalLabel = [NSLayoutConstraint constraintsWithVisualFormat:@"[totalLabel]-15-|" options:0 metrics:0 views:@{@"totalLabel":view.detailLabel}];
+    NSArray *vTotalLabel = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[totalLabel(24)]-5-|" options:0 metrics:0 views:@{@"totalLabel":view.detailLabel}];
     [view addConstraints:hTotalLabel];
     [view addConstraints:vTotalLabel];
     
@@ -174,10 +198,10 @@
 
     [tableView registerClass:[AnalysisTableViewCell class] forCellReuseIdentifier:@"cell"];
     AnalysisTableViewCell *cell = (AnalysisTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
+    cell.rectangleWidth = [[datas[indexPath.section][indexPath.row] valueForKey:@"percentWithYear"] floatValue];
     cell.monthLabel.text = [datas[indexPath.section][indexPath.row] valueForKey:@"month"];
     cell.moneyLabel.text = [NSString localizedStringWithFormat:@"%0.f",[[datas[indexPath.section][indexPath.row] valueForKey:@"money"] floatValue]];
-
+    
     return cell;
 }
 
@@ -186,11 +210,15 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+    NSString *year = [datas[indexPath.section][0] valueForKey:@"year"];
+    NSString *month = [datas[indexPath.section][indexPath.row] valueForKey:@"month"];
+
+    AnalysisDetailViewController *analysisVC = [AnalysisDetailViewController new];
+    analysisVC.year = year;
+    analysisVC.month = month;
     
-    AnalysisViewController *analysisVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailAnalysis"];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:analysisVC];
-    
-    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:analysisVC animated:YES];
     
 }
 
@@ -201,6 +229,10 @@
 
 - (void) segmentValueChange:(UISegmentedControl *)sender {
     NSLog(@"2");
+}
+
+- (void) showAlert {
+    
 }
 
 - (void)didReceiveMemoryWarning {

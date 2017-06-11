@@ -31,6 +31,8 @@
 		507FCDE81EE69EB80099EC76 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 507FCDEA1EE69EB80099EC76 /* Localizable.strings */; };
 		507FCDEE1EE6D3030099EC76 /* AnalysisTableViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCDED1EE6D3030099EC76 /* AnalysisTableViewcontroller.m */; };
 		507FCDF11EE831710099EC76 /* AnalysisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCDF01EE831710099EC76 /* AnalysisTableViewCell.m */; };
+		507FCDF41EE974560099EC76 /* AnalysisDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCDF31EE974560099EC76 /* AnalysisDetailViewController.m */; };
+		5083E0C51EEA6CF10019CB08 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5083E0C41EEA6CF10019CB08 /* SectionHeaderView.m */; };
 		50B5BF151EBB1F5D0059F59C /* CustomData.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5BF141EBB1F5D0059F59C /* CustomData.m */; };
 		50B87A8C1EDEEE96000A8506 /* analysis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B87A8A1EDEEE96000A8506 /* analysis@2x.png */; };
 		50B87A8D1EDEEE96000A8506 /* analysis@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B87A8B1EDEEE96000A8506 /* analysis@3x.png */; };
@@ -140,6 +142,10 @@
 		507FCDED1EE6D3030099EC76 /* AnalysisTableViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisTableViewcontroller.m; sourceTree = "<group>"; };
 		507FCDEF1EE831710099EC76 /* AnalysisTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisTableViewCell.h; sourceTree = "<group>"; };
 		507FCDF01EE831710099EC76 /* AnalysisTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisTableViewCell.m; sourceTree = "<group>"; };
+		507FCDF21EE974560099EC76 /* AnalysisDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisDetailViewController.h; sourceTree = "<group>"; };
+		507FCDF31EE974560099EC76 /* AnalysisDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisDetailViewController.m; sourceTree = "<group>"; };
+		5083E0C31EEA6CF10019CB08 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
+		5083E0C41EEA6CF10019CB08 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		50B5BF131EBB1F5D0059F59C /* CustomData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomData.h; sourceTree = "<group>"; };
 		50B5BF141EBB1F5D0059F59C /* CustomData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomData.m; sourceTree = "<group>"; };
 		50B87A8A1EDEEE96000A8506 /* analysis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "analysis@2x.png"; sourceTree = "<group>"; };
@@ -275,8 +281,12 @@
 			children = (
 				507FCDEC1EE6D3030099EC76 /* AnalysisTableViewcontroller.h */,
 				507FCDED1EE6D3030099EC76 /* AnalysisTableViewcontroller.m */,
+				507FCDF21EE974560099EC76 /* AnalysisDetailViewController.h */,
+				507FCDF31EE974560099EC76 /* AnalysisDetailViewController.m */,
 				507FCDEF1EE831710099EC76 /* AnalysisTableViewCell.h */,
 				507FCDF01EE831710099EC76 /* AnalysisTableViewCell.m */,
+				5083E0C31EEA6CF10019CB08 /* SectionHeaderView.h */,
+				5083E0C41EEA6CF10019CB08 /* SectionHeaderView.m */,
 			);
 			name = Analysis;
 			sourceTree = "<group>";
@@ -803,6 +813,7 @@
 				503593851EA8E13D005C5AB3 /* AddViewController.m in Sources */,
 				50D3531A1EC42C4C005BDB5D /* CategoryEditViewController.m in Sources */,
 				50F4C7241EB84C98002BB65C /* Item+CoreDataProperties.m in Sources */,
+				5083E0C51EEA6CF10019CB08 /* SectionHeaderView.m in Sources */,
 				50B5BF151EBB1F5D0059F59C /* CustomData.m in Sources */,
 				505DF40D1E9CB612002FA726 /* ViewController.m in Sources */,
 				503593821EA8E124005C5AB3 /* HistoryViewController.m in Sources */,
@@ -810,6 +821,7 @@
 				507FCDEE1EE6D3030099EC76 /* AnalysisTableViewcontroller.m in Sources */,
 				505DF4071E9CB612002FA726 /* main.m in Sources */,
 				50BDF7E81EA753050045D79D /* DataController.m in Sources */,
+				507FCDF41EE974560099EC76 /* AnalysisDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

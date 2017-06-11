@@ -20,6 +20,7 @@
 #define OHColorRGBA(r,g,b,a)                [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a];
 
 #define OHSystemBrownColor                  OHColorRGBA(124, 120, 114, 1)
+#define OHSystemBrownAlphaColor             OHColorRGBA(104, 100, 94, 0.7)
 #define OHSaveButtonActionColor             OHColorRGBA(58, 180, 50, 0.84)
 #define OHMoneyTextColor                    OHColorRGBA(7, 2, 1, 0.87)
 #define OHHeaderViewTitleColor              OHColorRGBA(221, 61, 22, 0.95)
@@ -33,6 +34,9 @@
 
 #define FORMAT_MONTH @"MMM"
 #define FORMAT_YEAR @"yyyy"
+
+#define HIDE_ADDBUTTON_NOTIFICATION @"hide_addButton_Notification"
+#define SHOW_ADDBUTTON_NOTIFICATION @"show_addButton_Notification"
 
 @interface OHMoneyRunContent : NSObject
 

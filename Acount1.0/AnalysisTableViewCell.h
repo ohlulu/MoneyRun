@@ -12,5 +12,6 @@
 
 @property (nonatomic) UILabel *monthLabel;
 @property (nonatomic) UILabel *moneyLabel;
+@property (nonatomic) CGFloat rectangleWidth;
 
 @end

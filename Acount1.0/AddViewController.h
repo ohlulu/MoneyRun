@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Item+CoreDataProperties.h"
-#define HIDE_ADDBUTTON_NOTIFICATION @"hide_addButton_Notification"
-#define SHOW_ADDBUTTON_NOTIFICATION @"show_addButton_Notification"
+
 
 @protocol AddViewControllerDelegate <NSObject>
 

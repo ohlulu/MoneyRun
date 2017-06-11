@@ -296,6 +296,7 @@
 - (IBAction)saveBtnPress:(id)sender {
     
     NSMutableString *intString = [self.moneyText.text mutableCopy];
+    
     [intString deleteCharactersInRange:NSMakeRange(0, 1)];
     [intString replaceOccurrencesOfString:@"," withString:@"" options:NSLiteralSearch range:NSMakeRange(0, intString.length)];
     
@@ -311,8 +312,6 @@
     [self.moneyText resignFirstResponder];
     
     prepareFormatDate = [dateFormat stringFromDate:prepareTrueDate];
-    
-    
     
     if (self.presentingViewController) {
         

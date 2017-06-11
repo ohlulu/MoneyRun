@@ -57,7 +57,7 @@
 // Inset a new category in mix index
 - (void) insertCategoryObjectWithCategoryName:(NSString *) name;
 
-- (NSArray *) getTotalMoneyGroupByCategoryNameWithDateRang:(NSString *) dateRang withFormatYear:(NSString *)formatYear segment:(NSInteger)segment;
+- (NSArray *) getTotalMoneyGroupByCategoryNameWithMonth:(NSString *) month withYear:(NSString *) year;
 
 - (NSArray *) getTotalMoneyGroupByCategoryNameFromDate:(NSDate *) startDate Todate:(NSDate *)endDate;
 

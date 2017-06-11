@@ -129,7 +129,6 @@
     
     
     __block NSString *monthTemp;
-
     __block NSMutableArray *numberArray = [NSMutableArray new];
     
     [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -151,7 +150,11 @@
         NSString *yearString = [format stringFromDate:date];
         
         if (![monthTemp isEqualToString:monthString] ) {
-            NSDictionary *data = @{@"year":yearString,@"month":monthString,@"money":[self sumOfMoneyWithMonth:monthString andYear:yearString]};
+            CGFloat month = [[self sumOfMoneyWithMonth:monthString andYear:yearString] floatValue];
+            CGFloat year = [[self sumOfMoneyWithYear:yearString] floatValue];
+            NSNumber *percent = [NSNumber numberWithFloat:(month / year)];
+            NSDictionary *data = @{@"year":yearString,@"month":monthString,@"money":[self sumOfMoneyWithMonth:monthString andYear:yearString],@"percentWithYear":percent};
+            
             [numberArray addObject:data];
             monthTemp = monthString;
         }
@@ -171,12 +174,6 @@
     }];
     NSLog(@"format Data %@" ,formatDatas);
     
-    
-//    NSLog(@"arr %@",arr);
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"year = %@",arr[1]];
-//    NSLog(@"arr Wtih year %@",[numberArray filteredArrayUsingPredicate:predicate]);
-//    
-//    NSLog(@"numberArray %@",numberArray);
 
     return formatDatas;
 }
@@ -259,7 +256,13 @@
     [fetchRequest setPropertiesToFetch:[NSArray arrayWithObject:expressionDescription]];
     
     // Creat a predicate to contains serch
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"formatDate CONTAINS[cd] %@ AND formatDate CONTAINS[cd] %@",month,year];
+    NSPredicate *predicate;
+    if (month != nil) {
+        predicate = [NSPredicate predicateWithFormat:@"formatDate CONTAINS[cd] %@ AND formatDate CONTAINS[cd] %@",month,year];
+    } else {
+        predicate = [NSPredicate predicateWithFormat:@"formatDate CONTAINS[cd] %@",year];
+    }
+    
     [fetchRequest setPredicate:predicate];
     
     // Execute the fetch.
@@ -269,6 +272,10 @@
     
     
     return number;
+}
+
+- (NSNumber *) sumOfMoneyWithYear:(NSString *) year {
+    return  [self sumOfMoneyWithMonth:nil andYear:year];
 }
 
 
@@ -379,24 +386,12 @@
 }
 
 
-- (NSArray *) getTotalMoneyGroupByCategoryNameWithDateRang:(NSString *) dateRang withFormatYear:(NSString *)formatYear segment:(NSInteger)segment{
-    NSLog(@"moth %@",dateRang);
+- (NSArray *) getTotalMoneyGroupByCategoryNameWithMonth:(NSString *) month withYear:(NSString *) year{
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:ENTITY_ITEM];
     NSPredicate *predicate = nil;
-//    NSDate *today = [NSDate date];
-//    predicate = [NSPredicate predicateWithFormat:@"trueDate >= %@ AND trueDate <= %@",today,today];
-    switch (segment) {
-        case 0:
-            predicate= [NSPredicate predicateWithFormat:@"formatDate CONTAINS[cd] %@",formatYear];
-            break;
-            
-        case 1:
-            predicate= [NSPredicate predicateWithFormat:@"formatDate CONTAINS[cd] %@ AND formatDate CONTAINS[cd] %@",dateRang,formatYear];
-            break;
-            
-        default:
-            break;
-    }
+    
+    predicate= [NSPredicate predicateWithFormat:@"formatDate CONTAINS[cd] %@ AND formatDate CONTAINS[cd] %@",month,year];
 
     [fetchRequest setPredicate:predicate];
     
@@ -420,8 +415,6 @@
     sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"sum" ascending:YES];
     
     results = [results sortedArrayUsingDescriptors:@[sortDescriptor]];
-    
-    NSLog(@"results %@", results);
     
     return results;
 }
