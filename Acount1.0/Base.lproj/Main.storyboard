@@ -338,7 +338,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="r9s-5c-49n"/>
                                 </constraints>
-                                <state key="normal" title="Save">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -379,6 +379,7 @@
                     <connections>
                         <outlet property="addButton" destination="mcU-hF-kap" id="Buk-SW-qpp"/>
                         <outlet property="addButtonBottomConstraint" destination="a9C-JM-ebS" id="r5x-8H-xtS"/>
+                        <outlet property="addCategoryBtn" destination="kh5-yS-2Ky" id="3CD-D2-Ts0"/>
                         <outlet property="addGreenView" destination="2dF-OK-hfC" id="J2V-LY-aLZ"/>
                         <outlet property="categoryImageView" destination="SEF-jT-SlC" id="sWC-AE-31h"/>
                         <outlet property="categoryTable" destination="wA3-cN-q1S" id="Mzp-w7-XeG"/>
@@ -412,7 +413,7 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="rhf-Rf-9gO" style="IBUITableViewCellStyleDefault" id="ToN-q2-vh7">
-                                        <rect key="frame" x="0.0" y="28" width="330" height="55"/>
+                                        <rect key="frame" x="0.0" y="28" width="331" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ToN-q2-vh7" id="VSz-0F-7c5">
                                             <rect key="frame" x="0.0" y="0.0" width="330" height="55"/>
@@ -481,7 +482,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GzH-Bz-042" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="-110.19490254872565"/>
+            <point key="canvasLocation" x="-479" y="-791"/>
         </scene>
         <!--Category Add View Controller-->
         <scene sceneID="tdB-PM-nce">

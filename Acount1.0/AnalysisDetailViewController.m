@@ -12,7 +12,7 @@
 @import Charts;
 @import GoogleMobileAds;
 
-@interface AnalysisDetailViewController () <ChartViewDelegate,IChartAxisValueFormatter,GADInterstitialDelegate,UIScrollViewDelegate>
+@interface AnalysisDetailViewController () <ChartViewDelegate,IChartAxisValueFormatter,UIScrollViewDelegate>
 {
     DataController *dc;
     __block NSMutableArray *pieChartEntries;
@@ -27,7 +27,7 @@
 @property (nonatomic) PieChartView *pieChartView;
 @property (nonatomic) HorizontalBarChartView *barChartView;
 @property (nonatomic) UIScrollView *scView;
-@property (nonnull) GADInterstitial *interstitial;
+
 
 @end
 
@@ -46,10 +46,6 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.interstitial loadRequest:[GADRequest request]];
-    if (self.interstitial.isReady) {
-        [self.interstitial presentFromRootViewController:self];
-    }
 }
 
 
@@ -101,14 +97,7 @@
     [self pieChartSetting];
     [self barChartSetting];
     [self setConstranis];
-    
-    
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //background
-        self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-9825074378768377/7294923648"];
-        self.interstitial.delegate = self;
-    });
+
     
 }
 
@@ -330,19 +319,19 @@
 }
 
 
-#pragma mark - GADDelegate
-
-- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
-
--(void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-}
+//#pragma mark - GADDelegate
+//
+//- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
+//    
+//    [self.navigationController popViewControllerAnimated:YES];
+//    
+//}
+//
+//-(void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }];
+//}
 
 
 - (void)didReceiveMemoryWarning {

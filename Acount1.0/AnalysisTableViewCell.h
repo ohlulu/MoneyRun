@@ -14,4 +14,6 @@
 @property (nonatomic) UILabel *moneyLabel;
 @property (nonatomic) CGFloat rectangleWidth;
 
+- (void) drawRectangel:(CGFloat) width;
+
 @end

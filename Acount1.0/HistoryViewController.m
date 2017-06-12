@@ -348,13 +348,13 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSLog(@"Delect");
-//        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         Item *item = self.datas[indexPath.section].items[indexPath.row];
         [dc.managedObjectContext deleteObject:item];
         [dc saveToCoreData];
         [self.datas[indexPath.section].items removeObjectAtIndex:indexPath.row];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        [self coreDataHasChange];
+//        [self coreDataHasChange];
+        [[NSNotificationCenter defaultCenter] postNotificationName:COREDATA_HASCHANGE_NOTIFICATION object:nil];
     }
 }
 
@@ -383,6 +383,7 @@
     NSLog(@"get");
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

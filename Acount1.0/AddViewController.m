@@ -31,6 +31,7 @@
 
 @property (strong, nonatomic) NSMutableArray<Category *> *categoryList;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addCategoryBtn;
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
 @property (weak, nonatomic) IBOutlet UITableView *categoryTable;
 @property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
@@ -123,6 +124,8 @@
     
     [super viewDidLoad];
     
+    [self.addButton setTitle:NSLocalizedString(@"Save", @"save") forState:UIControlStateNormal];
+    [self.addCategoryBtn setTitle:NSLocalizedString(@"Category", @"category")];
     currencyFormatter = [[NSNumberFormatter alloc] init];
     currencyFormatter.locale = [NSLocale currentLocale];
     currencyFormatter.maximumFractionDigits = 0;

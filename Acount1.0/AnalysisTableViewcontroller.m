@@ -13,24 +13,38 @@
 #import "DataController.h"
 #import "TabBarViewController.h"
 #import "SectionHeaderView.h"
+@import GoogleMobileAds;
 
-@interface AnalysisTableViewcontroller () <UITableViewDelegate, UITableViewDataSource>
+@interface AnalysisTableViewcontroller () <UITableViewDelegate, UITableViewDataSource,GADInterstitialDelegate>
 {
     DataController *dc;
     NSMutableArray *datas;
     NSMutableArray *datasPercent;
 }
 
-//@property (nonatomic) UIButton *categoryImageBtn;
-//@property (nonatomic) UIButton *categoryNameBtn;
+@property (nonatomic) UIButton *categoryImageBtn;
+@property (nonatomic) UIButton *categoryNameBtn;
 //@property (nonatomic) UISegmentedControl *segment;
-//@property (nonatomic) UIStackView *stackWithImageAndName;
+@property (nonatomic) UIStackView *stackWithImageAndName;
 @property (nonatomic) UITableView *totalTableView;
-
+@property (nonnull) GADInterstitial *interstitial;
 
 @end
 
 @implementation AnalysisTableViewcontroller
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(coreDataChange)
+                                                     name:COREDATA_HASCHANGE_NOTIFICATION
+                                                   object:nil];
+        
+    }
+    return self;
+}
 
 -(void)viewWillAppear:(BOOL)animated{
     
@@ -38,6 +52,14 @@
     self.navigationController.navigationBar.hidden = YES;
     self.tabBarController.tabBar.hidden = NO;
     [[NSNotificationCenter defaultCenter] postNotificationName:SHOW_ADDBUTTON_NOTIFICATION object:nil];
+    
+    //    if (arc4random()%10 == 1) {
+    if (self.interstitial.isReady) {
+        [self.interstitial presentFromRootViewController:self];
+    }
+    
+    //    }
+    
 }
 
 - (void)viewDidLoad {
@@ -48,8 +70,11 @@
     dc = [DataController sharedInstance];
     datas = [dc getTotalMoneyGroupByMonth];
     
+    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-9825074378768377/7294923648"];
+    self.interstitial.delegate = self;
+    [self.interstitial loadRequest:[GADRequest request]];
     
-    /**
+    
     // Image Button
     self.categoryImageBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.categoryImageBtn setBackgroundImage:[UIImage imageNamed:@"food"] forState:UIControlStateNormal];
@@ -57,7 +82,7 @@
     
     // Name Button
     self.categoryNameBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.categoryNameBtn setTitle:@"All category" forState:UIControlStateNormal];
+    [self.categoryNameBtn setTitle:NSLocalizedString(@"AllCategory", @"allCategory") forState:UIControlStateNormal];
     [self.categoryNameBtn addTarget:self action:@selector(categoryButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     self.categoryNameBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     [self.categoryNameBtn.titleLabel setFont:[UIFont systemFontOfSize:20]];
@@ -69,7 +94,7 @@
     self.stackWithImageAndName.alignment = UIStackViewAlignmentCenter;
     self.stackWithImageAndName.spacing = 15;
     [self.view addSubview:self.stackWithImageAndName];
-    */
+    
     
     /**
     // Segment
@@ -89,19 +114,34 @@
     [self setConstrains];
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+
+
+    
+}
+
+#pragma mark - NSNotitfication
+
+- (void) coreDataChange {
+    dc = [DataController sharedInstance];
+    [datas removeAllObjects];
+    datas = [dc getTotalMoneyGroupByMonth];
+    [self.totalTableView reloadData];
+}
+
 #pragma mark - SetConstrains
 
 - (void) setConstrains {
     
-//    CGFloat elementWidth = [UIScreen mainScreen].bounds.size.width-30;
-    
-    /**
+    CGFloat elementWidth = [UIScreen mainScreen].bounds.size.width-30;
     
     // Stack View
     self.stackWithImageAndName.translatesAutoresizingMaskIntoConstraints = NO;
     [self.stackWithImageAndName.widthAnchor constraintEqualToConstant:elementWidth].active = YES;
     [self.stackWithImageAndName.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [self.stackWithImageAndName.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:10].active = YES;
+    [self.stackWithImageAndName.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:18].active = YES;
     [self.stackWithImageAndName.heightAnchor constraintEqualToConstant:46].active = YES;
     
     // Category Btuuon
@@ -114,7 +154,7 @@
     [self.stackWithImageAndName addConstraints:hBtn];
     [self.stackWithImageAndName addConstraints:vImageBtn];
     [self.stackWithImageAndName addConstraints:vNameBtn];
-    */
+    
     
     /**
     // Segmenet
@@ -130,7 +170,7 @@
     [self.totalTableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
 //    [self.totalTableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [self.totalTableView.bottomAnchor constraintEqualToAnchor:self.bottomLayoutGuide.topAnchor].active = YES;
-    [self.totalTableView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor constant:20].active = YES;
+    [self.totalTableView.topAnchor constraintEqualToAnchor:self.stackWithImageAndName.bottomAnchor constant:20].active = YES;
     
 }
 
@@ -199,6 +239,7 @@
     [tableView registerClass:[AnalysisTableViewCell class] forCellReuseIdentifier:@"cell"];
     AnalysisTableViewCell *cell = (AnalysisTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.rectangleWidth = [[datas[indexPath.section][indexPath.row] valueForKey:@"percentWithYear"] floatValue];
+    
     cell.monthLabel.text = [datas[indexPath.section][indexPath.row] valueForKey:@"month"];
     cell.moneyLabel.text = [NSString localizedStringWithFormat:@"%0.f",[[datas[indexPath.section][indexPath.row] valueForKey:@"money"] floatValue]];
     
@@ -234,6 +275,18 @@
 - (void) showAlert {
     
 }
+
+#pragma mark - GADInterstitialDelegate
+
+- (void)interstitialDidDismissScreen:(GADInterstitial *)ad{
+    
+    // user press X
+    
+    [self.interstitial loadRequest:[GADRequest request]];
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

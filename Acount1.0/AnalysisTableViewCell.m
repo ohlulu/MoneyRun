@@ -8,16 +8,19 @@
 
 #import "AnalysisTableViewCell.h"
 #import "OHMoneyRunContent.h"
-@implementation AnalysisTableViewCell
+@implementation AnalysisTableViewCell{
+    CGSize monthSize;
+    CGPoint monthPoint;
+    CGPoint moneyPoint;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    
+    NSLog(@"initWithStyle");
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
@@ -29,10 +32,8 @@
         self.moneyLabel = [UILabel new];
         [self.contentView addSubview:self.moneyLabel];
         [self setMoneyLabelStyle:self.moneyLabel];
-        
+    
         [self setConstrains];
-        
-        
         
     }
     return self;
@@ -72,12 +73,11 @@
 
 -(void)drawRect:(CGRect)rect {
     [super drawRect:rect];
+    NSLog(@"drawRect");
     
-    CGSize monthSize = self.monthLabel.frame.size;
-    CGPoint monthPoint = self.monthLabel.frame.origin;
-    
-//    CGSize moneySize = self.moneyLabel.frame.size;
-    CGPoint moneyPoint = self.moneyLabel.frame.origin;
+    monthSize = self.monthLabel.frame.size;
+    monthPoint = self.monthLabel.frame.origin;
+    moneyPoint = self.moneyLabel.frame.origin;
     
     // Draw Line
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -88,19 +88,26 @@
     CGContextAddLineToPoint(context, monthPoint.x + monthSize.width + 18, self.contentView.frame.size.height);
     CGContextStrokePath(context);
     
-    
     // Draw rectangle
     
     CGFloat x = monthPoint.x + monthSize.width + 18*2 + 1.6;
     CGFloat y = 11;
     
     CGRect rectangle =
-        CGRectMake(x, y , self.rectangleWidth * (moneyPoint.x - x), 22);
+    CGRectMake(x, y , self.rectangleWidth * (moneyPoint.x - x), 22);
+    NSLog(@" %f - %f",moneyPoint.x,x);
     CGContextRef rectangleContext = UIGraphicsGetCurrentContext();
     CGContextSetRGBFillColor(rectangleContext, 0.5, 0.5, 0.5, 0.5);
     CGContextFillRect(rectangleContext, rectangle);
     
+    
+}
 
+- (void) drawRectangel:(CGFloat) width {
+    
+    
+
+   
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
