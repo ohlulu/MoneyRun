@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int32_t money;
 @property (nullable, nonatomic, copy) NSDate *trueDate;
 @property (nullable, nonatomic, copy) NSString *formatDate;
+@property (nullable, nonatomic, copy) NSString *remark;
 @property (nullable, nonatomic, retain) Category *category;
 
 @end

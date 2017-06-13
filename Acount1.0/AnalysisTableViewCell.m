@@ -20,14 +20,15 @@
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    NSLog(@"initWithStyle");
+
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        
+        self.backgroundColor = [UIColor clearColor];
         
         self.monthLabel = [UILabel new];
         [self.contentView addSubview:self.monthLabel];
         [self setMonthLabelStyle:self.monthLabel];
-        
         
         self.moneyLabel = [UILabel new];
         [self.contentView addSubview:self.moneyLabel];
@@ -36,6 +37,7 @@
         [self setConstrains];
         
     }
+    [self setNeedsDisplay];
     return self;
     
 }
@@ -73,7 +75,7 @@
 
 -(void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    NSLog(@"drawRect");
+    
     
     monthSize = self.monthLabel.frame.size;
     monthPoint = self.monthLabel.frame.origin;
@@ -95,7 +97,7 @@
     
     CGRect rectangle =
     CGRectMake(x, y , self.rectangleWidth * (moneyPoint.x - x), 22);
-    NSLog(@" %f - %f",moneyPoint.x,x);
+    
     CGContextRef rectangleContext = UIGraphicsGetCurrentContext();
     CGContextSetRGBFillColor(rectangleContext, 0.5, 0.5, 0.5, 0.5);
     CGContextFillRect(rectangleContext, rectangle);

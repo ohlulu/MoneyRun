@@ -13,6 +13,7 @@
 #import "DataController.h"
 #import "TabBarViewController.h"
 #import "SectionHeaderView.h"
+#import <QuartzCore/QuartzCore.h>
 @import GoogleMobileAds;
 
 @interface AnalysisTableViewcontroller () <UITableViewDelegate, UITableViewDataSource,GADInterstitialDelegate>
@@ -22,11 +23,14 @@
     NSMutableArray *datasPercent;
 }
 
-@property (nonatomic) UIButton *categoryImageBtn;
-@property (nonatomic) UIButton *categoryNameBtn;
+//@property (nonatomic) UIButton *categoryImageBtn;
+//@property (nonatomic) UIButton *categoryNameBtn;
+//@property (nonatomic) UIStackView *stackWithImageAndName;
 //@property (nonatomic) UISegmentedControl *segment;
-@property (nonatomic) UIStackView *stackWithImageAndName;
+@property (nonatomic) UIView *navView;
 @property (nonatomic) UITableView *totalTableView;
+@property (nonatomic) UILabel *titleLabel;
+
 @property (nonnull) GADInterstitial *interstitial;
 
 @end
@@ -66,6 +70,9 @@
 
     [super viewDidLoad];
     self.view.tintColor = OHSystemBrownColor;
+    self.view.backgroundColor = OHCalendarWhiteColor;
+    
+    
     datas = [NSMutableArray new];
     dc = [DataController sharedInstance];
     datas = [dc getTotalMoneyGroupByMonth];
@@ -74,7 +81,26 @@
     self.interstitial.delegate = self;
     [self.interstitial loadRequest:[GADRequest request]];
     
+    // navView
+    self.navView = [[UIView alloc] init];
+    [self.view addSubview:self.navView];
+    // Set navView's style
+    self.navView.backgroundColor = OHCalendarWhiteColor;
+    UIColor *color = [UIColor lightGrayColor];
+    self.navView.layer.masksToBounds = NO;
+    self.navView.layer.shadowColor = [color CGColor];
+    self.navView.layer.shadowRadius = 2.0f;
+    self.navView.layer.shadowOpacity = 0.67;
+    self.navView.layer.shadowOffset = CGSizeMake(0, 4);
     
+    // Title Label
+    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel.text = NSLocalizedString(@"AllCategory", @"all");
+    self.titleLabel.textColor = OHSystemBrownColor;
+    [self.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:28]];
+    [self.navView addSubview:self.titleLabel];
+    
+    /**
     // Image Button
     self.categoryImageBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.categoryImageBtn setBackgroundImage:[UIImage imageNamed:@"food"] forState:UIControlStateNormal];
@@ -94,7 +120,7 @@
     self.stackWithImageAndName.alignment = UIStackViewAlignmentCenter;
     self.stackWithImageAndName.spacing = 15;
     [self.view addSubview:self.stackWithImageAndName];
-    
+    */
     
     /**
     // Segment
@@ -109,6 +135,7 @@
     self.totalTableView.delegate = self;
     self.totalTableView.dataSource = self;
     self.totalTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.totalTableView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.totalTableView];
     
     [self setConstrains];
@@ -135,8 +162,8 @@
 
 - (void) setConstrains {
     
-    CGFloat elementWidth = [UIScreen mainScreen].bounds.size.width-30;
-    
+//    CGFloat elementWidth = [UIScreen mainScreen].bounds.size.width-30;
+    /**
     // Stack View
     self.stackWithImageAndName.translatesAutoresizingMaskIntoConstraints = NO;
     [self.stackWithImageAndName.widthAnchor constraintEqualToConstant:elementWidth].active = YES;
@@ -154,7 +181,7 @@
     [self.stackWithImageAndName addConstraints:hBtn];
     [self.stackWithImageAndName addConstraints:vImageBtn];
     [self.stackWithImageAndName addConstraints:vNameBtn];
-    
+    */
     
     /**
     // Segmenet
@@ -164,13 +191,26 @@
     [self.segment.widthAnchor constraintEqualToConstant:elementWidth].active = YES;
     */
     
+    // NavView
+    self.navView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.navView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [self.navView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [self.navView.topAnchor constraintEqualToAnchor:self.topLayoutGuide.bottomAnchor].active = YES;
+    [self.navView.heightAnchor constraintEqualToConstant:63].active = YES;
+    
+    // Title Label
+    self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.titleLabel.heightAnchor constraintEqualToConstant:49].active = YES;
+    [self.titleLabel.centerXAnchor constraintEqualToAnchor:self.navView.centerXAnchor].active = YES;
+    [self.titleLabel.centerYAnchor constraintEqualToAnchor:self.navView.centerYAnchor].active = YES;
+    
     // Table View
     self.totalTableView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.totalTableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
     [self.totalTableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
 //    [self.totalTableView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [self.totalTableView.bottomAnchor constraintEqualToAnchor:self.bottomLayoutGuide.topAnchor].active = YES;
-    [self.totalTableView.topAnchor constraintEqualToAnchor:self.stackWithImageAndName.bottomAnchor constant:20].active = YES;
+    [self.totalTableView.topAnchor constraintEqualToAnchor:self.navView.bottomAnchor constant:8].active = YES;
     
 }
 
@@ -191,7 +231,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     SectionHeaderView *view = [[SectionHeaderView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 34)];
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor = [UIColor clearColor];
     
     
 //    UILabel *view.titleLabel = [[UILabel alloc] init];
@@ -205,7 +245,7 @@
     view.detailLabel.text = [NSString localizedStringWithFormat:@"$%0ld",[[datas[section] valueForKeyPath:@"@sum.money"] integerValue]];
     view.detailLabel.numberOfLines = 0;
     [view.detailLabel sizeToFit];
-    view.detailLabel.textColor = OHHeaderViewTitleColor;
+    view.detailLabel.textColor = OHHeaderViewMoneyTextColor;
     
     [view addSubview:view.titleLabel];
     [view addSubview:view.detailLabel];
@@ -280,9 +320,6 @@
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)ad{
     
-    // user press X
-    
-    [self.interstitial loadRequest:[GADRequest request]];
     
 }
 

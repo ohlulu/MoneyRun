@@ -10,5 +10,6 @@
 
 @interface TopCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *totalMoneyByMoth;
+@property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
 
 @end

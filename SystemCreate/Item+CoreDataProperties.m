@@ -20,5 +20,6 @@
 @dynamic trueDate;
 @dynamic formatDate;
 @dynamic category;
+@dynamic remark;
 
 @end

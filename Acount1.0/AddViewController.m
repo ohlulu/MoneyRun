@@ -26,11 +26,14 @@
     __block NSInteger selectIndex;
     NSString *selectedCategoryName;
     NSNumberFormatter *currencyFormatter;
+    NSCalendar *calendar;
     
 }
 
 @property (strong, nonatomic) NSMutableArray<Category *> *categoryList;
 
+@property (weak, nonatomic) IBOutlet UIButton *dateImageBtn;
+@property (weak, nonatomic) IBOutlet UITextField *remarkTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addCategoryBtn;
 @property (weak, nonatomic) IBOutlet UIButton *dateButton;
 @property (weak, nonatomic) IBOutlet UITableView *categoryTable;
@@ -70,6 +73,7 @@
     }
     return self;
 }
+
 
 -(void)viewWillAppear:(BOOL)animated {
     
@@ -124,6 +128,13 @@
     
     [super viewDidLoad];
     
+    calendar = [NSCalendar currentCalendar];
+    
+    self.view.backgroundColor = OHCalendarWhiteColor;
+    self.dateImageBtn.tintColor = OHSystemBrownColor;
+    self.dateImageBtn.titleLabel.textColor = OHSystemBrownColor;
+    self.remarkTextField.backgroundColor = OHCalendarWhiteColor;
+    
     [self.addButton setTitle:NSLocalizedString(@"Save", @"save") forState:UIControlStateNormal];
     [self.addCategoryBtn setTitle:NSLocalizedString(@"Category", @"category")];
     currencyFormatter = [[NSNumberFormatter alloc] init];
@@ -135,7 +146,7 @@
     if (self.presentingViewController) {
         [self.navigationItem.leftBarButtonItem setTitle:NSLocalizedString(@"Cancel", @"cancel")];
     } else {
-        [self.navigationItem.leftBarButtonItem setImage:[UIImage imageNamed:@"back"]];
+//        [self.navigationItem.leftBarButtonItem setImage:[UIImage imageNamed:@"back"]];
     }
     
     
@@ -146,11 +157,12 @@
     // Clear color with cursor
     self.moneyText.tintColor = [UIColor clearColor];
     self.moneyText.backgroundColor = OHSystemBrownColor;
-    self.moneyText.textColor = [UIColor whiteColor];
+    self.moneyText.textColor = OHCalendarWhiteColor;
     self.addGreenView.backgroundColor = OHSystemBrownColor;
     
     // Init date format
     dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setLocale:[NSLocale currentLocale]];
     [dateFormat setDateStyle:NSDateFormatterLongStyle];
     [dateFormat setTimeStyle:NSDateFormatterNoStyle];
         
@@ -169,14 +181,16 @@
     } else {
         // If addVC is push from historyVC's cell
         // Init data from HistoryView
-        NSString *localeString = [currencyFormatter stringFromNumber:[NSNumber numberWithInt:self.currentItem.money]];
-        self.moneyText.text = localeString;
+        NSString *currentMoneyString = [currencyFormatter stringFromNumber:[NSNumber numberWithInt:self.currentItem.money]];
+        self.moneyText.text = currentMoneyString;
+        self.remarkTextField.text = self.currentItem.remark;
         self.categoryImageView.image = [UIImage imageNamed:self.currentItem.category.imageName];
         
         prepareFormatDate = self.currentItem.formatDate;
         prepareTrueDate = self.currentItem.trueDate;
         
-        [self.dateButton setTitle:prepareFormatDate forState:UIControlStateNormal];
+//        [self.dateButton setTitle:prepareFormatDate forState:UIControlStateNormal];
+        [self setDateButtonTitleWithDate:prepareTrueDate];
         
     }
     
@@ -203,18 +217,13 @@
     // Set Table view style
     self.categoryTable.rowHeight = 50;
     self.categoryTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.categoryTable.backgroundColor = [UIColor clearColor];
 
     
     [self.categoryTable.bottomAnchor constraintEqualToAnchor:self.addButton.topAnchor constant:-20].active = YES;
     
     self.whiteBoard.layer.cornerRadius = 21.0;
 
-}
-
-
-- (void) setDateButtonTitleWithDate:(NSDate *) date {
-    NSString *currentDateString = [dateFormat stringFromDate:date];
-    [self.dateButton setTitle:currentDateString forState:UIControlStateNormal];
 }
 
 #pragma mark - UITableViewDataSource
@@ -234,6 +243,8 @@
     cell.textLabel.text = [self.categoryList valueForKey:@"name"][indexPath.row];
     
     cell.imageView.image =[UIImage imageNamed:[self.categoryList valueForKey:@"imageName"][indexPath.row]];
+    
+    cell.backgroundColor = [UIColor clearColor];
     
     if (selectIndex == indexPath.row) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -329,6 +340,12 @@
         item.money = [intString intValue];
         item.trueDate = prepareTrueDate;
         item.formatDate = prepareFormatDate;
+        NSLog(@"text %@",self.remarkTextField.text);
+        if (![self.remarkTextField.text isEqualToString:@""]) {
+            item.remark = self.remarkTextField.text;
+        } else {
+            item.remark = @"";
+        }
         item.io = NO;
         
         [dc insertItem:item WithCategorylName:selectedCategoryName];
@@ -348,6 +365,7 @@
         item.money = [intString intValue];
         item.trueDate = prepareTrueDate;
         item.formatDate = prepareFormatDate;
+        item.remark = self.remarkTextField.text;
         item.io = NO;
         
         [dc insertItem:item WithCategorylName:selectedCategoryName];
@@ -411,6 +429,15 @@
 - (void) imageClick:(UITapGestureRecognizer *)sender{
     NSLog(@"123 %@",sender);
     
+}
+
+- (void) setDateButtonTitleWithDate:(NSDate *) date {
+    
+    NSDateComponents *components = [calendar components:NSCalendarUnitDay fromDate:date];
+    [self.dateImageBtn setTitle:[NSString stringWithFormat:@"%ld",(long)components.day] forState:UIControlStateNormal];
+    
+    NSString *currentDateString = [dateFormat stringFromDate:date];
+    [self.dateButton setTitle:currentDateString forState:UIControlStateNormal];
 }
 
 #pragma mark - CalendarViewControllerDelegate

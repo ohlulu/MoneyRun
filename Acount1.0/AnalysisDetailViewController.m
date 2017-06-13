@@ -78,6 +78,13 @@
     
     // PieChart new than add on view
     self.pieChartView = [[PieChartView alloc] init];
+    self.pieChartView.backgroundColor = [UIColor clearColor];
+    UIColor *color = [UIColor lightGrayColor];
+    self.pieChartView.layer.masksToBounds = NO;
+    self.pieChartView.layer.shadowColor = [color CGColor];
+    self.pieChartView.layer.shadowRadius = 2.0f;
+    self.pieChartView.layer.shadowOpacity = 0.67;
+    self.pieChartView.layer.shadowOffset = CGSizeMake(8, 8);
     [self.view addSubview:self.pieChartView];
     
     // Scroll View new than add on view
@@ -85,10 +92,18 @@
     self.scView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
     [self.scView setContentOffset:CGPointMake(0, 0) animated:NO];
     self.scView.delegate = self;
+    self.scView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.scView];
     
     // BarChart new than add on scroll view
     self.barChartView = [[HorizontalBarChartView alloc] init];
+    self.barChartView.backgroundColor = [UIColor clearColor];
+    self.barChartView.layer.masksToBounds = NO;
+    self.barChartView.layer.shadowColor = [color CGColor];
+    self.barChartView.layer.shadowRadius = 2.0f;
+    self.barChartView.layer.shadowOpacity = 0.67;
+    self.barChartView.layer.shadowOffset = CGSizeMake(8, 8);
+    
     [self.scView addSubview:self.barChartView];
     
     [self setPieChartData];

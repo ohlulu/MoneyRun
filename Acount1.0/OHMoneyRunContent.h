@@ -21,9 +21,10 @@
 
 #define OHSystemBrownColor                  OHColorRGBA(124, 120, 114, 1)
 #define OHSystemBrownAlphaColor             OHColorRGBA(104, 100, 94, 0.7)
-#define OHSaveButtonActionColor             OHColorRGBA(58, 180, 50, 0.84)
+#define OHSaveButtonActionColor             OHColorRGBA(50, 179, 106, 0.84)
 #define OHMoneyTextColor                    OHColorRGBA(7, 2, 1, 0.87)
-#define OHHeaderViewTitleColor              OHColorRGBA(221, 61, 22, 0.95)
+#define OHHeaderViewMoneyTextColor          OHColorRGBA(221, 61, 22, 0.95)
+#define OHHeaderViewDateTextColor           OHColorRGBA(30, 40, 60, 0.95)
 #define OHHeaderViewBackgroundColor         OHColorRGBA(230, 230, 230, 0.95)
 
 #define OHCalendarWhiteColor                OHColorRGBA(250, 250, 250,1)

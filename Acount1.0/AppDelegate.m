@@ -10,11 +10,10 @@
 #import <CoreData/CoreData.h>
 #import "AddViewController.h"
 #import "HistoryViewController.h"
-//#import "AnalysisViewController.h"
 #import "DataController.h"
 #import "OHMoneyRunContent.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+//#import <Fabric/Fabric.h>
+//#import <Crashlytics/Crashlytics.h>
 @import GoogleMobileAds;
 @import Firebase;
 
@@ -31,18 +30,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [Fabric with:@[[Crashlytics class]]];
-    [FIRApp configure];
+    NSLog(@"HOME PAHT : %@",NSHomeDirectory());
     
+//    [Fabric with:@[[Crashlytics class]]];
+    [FIRApp configure];
     
     UITextField *lagFreeField = [[UITextField alloc] init];
     [self.window addSubview:lagFreeField];
     [lagFreeField becomeFirstResponder];
     [lagFreeField resignFirstResponder];
     [lagFreeField removeFromSuperview];
-    
-    
-    NSLog(@"HOME PAHT : %@",NSHomeDirectory());
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -78,6 +75,16 @@
         [defaults setBool:NO forKey:isShowStoreReview];
         [defaults setValue:version forKey:shortVersion];
     }
+    
+    DataController *dc = [DataController sharedInstance];
+    [[dc loadItemsGroupByFormatMonth:@"" andFormatYear:@""] enumerateObjectsUsingBlock:^(CustomData * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj.items enumerateObjectsUsingBlock:^(Item * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.remark == nil) {
+                obj.remark = @"";
+            }
+        }];
+    }];
+    [dc saveToCoreData];
     
 
     

@@ -33,6 +33,11 @@
 		507FCDF11EE831710099EC76 /* AnalysisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCDF01EE831710099EC76 /* AnalysisTableViewCell.m */; };
 		507FCDF41EE974560099EC76 /* AnalysisDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCDF31EE974560099EC76 /* AnalysisDetailViewController.m */; };
 		5083E0C51EEA6CF10019CB08 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5083E0C41EEA6CF10019CB08 /* SectionHeaderView.m */; };
+		5083E0CF1EEE49FB0019CB08 /* remark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5083E0CD1EEE49FB0019CB08 /* remark@2x.png */; };
+		5083E0D01EEE49FB0019CB08 /* remark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5083E0CE1EEE49FB0019CB08 /* remark@3x.png */; };
+		5083E0D31EEE60760019CB08 /* calenderBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5083E0D11EEE60760019CB08 /* calenderBG@2x.png */; };
+		5083E0D41EEE60760019CB08 /* calendarBG@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5083E0D21EEE60760019CB08 /* calendarBG@3x.png */; };
+		5083E0D71EEE73920019CB08 /* SubtitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5083E0D61EEE73920019CB08 /* SubtitleCell.m */; };
 		50B5BF151EBB1F5D0059F59C /* CustomData.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B5BF141EBB1F5D0059F59C /* CustomData.m */; };
 		50B87A8C1EDEEE96000A8506 /* analysis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B87A8A1EDEEE96000A8506 /* analysis@2x.png */; };
 		50B87A8D1EDEEE96000A8506 /* analysis@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B87A8B1EDEEE96000A8506 /* analysis@3x.png */; };
@@ -146,6 +151,13 @@
 		507FCDF31EE974560099EC76 /* AnalysisDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisDetailViewController.m; sourceTree = "<group>"; };
 		5083E0C31EEA6CF10019CB08 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
 		5083E0C41EEA6CF10019CB08 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
+		5083E0C61EEE2FE50019CB08 /* Acount1_ 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Acount1_ 2.xcdatamodel"; sourceTree = "<group>"; };
+		5083E0CD1EEE49FB0019CB08 /* remark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remark@2x.png"; sourceTree = "<group>"; };
+		5083E0CE1EEE49FB0019CB08 /* remark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remark@3x.png"; sourceTree = "<group>"; };
+		5083E0D11EEE60760019CB08 /* calenderBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calenderBG@2x.png"; sourceTree = "<group>"; };
+		5083E0D21EEE60760019CB08 /* calendarBG@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendarBG@3x.png"; sourceTree = "<group>"; };
+		5083E0D51EEE73920019CB08 /* SubtitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubtitleCell.h; sourceTree = "<group>"; };
+		5083E0D61EEE73920019CB08 /* SubtitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubtitleCell.m; sourceTree = "<group>"; };
 		50B5BF131EBB1F5D0059F59C /* CustomData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomData.h; sourceTree = "<group>"; };
 		50B5BF141EBB1F5D0059F59C /* CustomData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomData.m; sourceTree = "<group>"; };
 		50B87A8A1EDEEE96000A8506 /* analysis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "analysis@2x.png"; sourceTree = "<group>"; };
@@ -236,11 +248,15 @@
 				50D285961ED6C5F300083888 /* CategoryImage */,
 				50DD10D61EE3EB8C001D9084 /* back@3x.png */,
 				50DD10D71EE3EB8C001D9084 /* back@2x.png */,
+				5083E0CD1EEE49FB0019CB08 /* remark@2x.png */,
+				5083E0CE1EEE49FB0019CB08 /* remark@3x.png */,
 				507BDD961ED726A7005E1ABA /* list@2x.png */,
 				50D285891ED68A1800083888 /* list.png */,
 				50B87A8A1EDEEE96000A8506 /* analysis@2x.png */,
 				50B87A8B1EDEEE96000A8506 /* analysis@3x.png */,
 				50D2858C1ED6BBF600083888 /* left@2x.png */,
+				5083E0D11EEE60760019CB08 /* calenderBG@2x.png */,
+				5083E0D21EEE60760019CB08 /* calendarBG@3x.png */,
 				50D285BD1ED6D15500083888 /* calendar@2x.png */,
 				50D285BE1ED6D15500083888 /* calendar@3x.png */,
 				50D2858D1ED6BBF600083888 /* left@3x.png */,
@@ -261,6 +277,8 @@
 				502DAD941EBFFCF000707524 /* TopCell.m */,
 				502DAD961EC0456F00707524 /* NormalCell.h */,
 				502DAD971EC0456F00707524 /* NormalCell.m */,
+				5083E0D51EEE73920019CB08 /* SubtitleCell.h */,
+				5083E0D61EEE73920019CB08 /* SubtitleCell.m */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -592,6 +610,7 @@
 				507FCDE81EE69EB80099EC76 /* Localizable.strings in Resources */,
 				505DF4151E9CB612002FA726 /* Assets.xcassets in Resources */,
 				50DD10D51EE2FD3D001D9084 /* GoogleService-Info.plist in Resources */,
+				5083E0CF1EEE49FB0019CB08 /* remark@2x.png in Resources */,
 				50D285A81ED6C61E00083888 /* car@3x.png in Resources */,
 				50D285C01ED6D15500083888 /* calendar@3x.png in Resources */,
 				505DF4101E9CB612002FA726 /* Main.storyboard in Resources */,
@@ -599,11 +618,13 @@
 				50D285AF1ED6C61E00083888 /* food@2x.png in Resources */,
 				50D285B11ED6C61E00083888 /* house@2x.png in Resources */,
 				50D285911ED6BBF600083888 /* left@3x.png in Resources */,
+				5083E0D31EEE60760019CB08 /* calenderBG@2x.png in Resources */,
 				50D285AD1ED6C61E00083888 /* doctor@3x.png in Resources */,
 				50D285BC1ED6C63500083888 /* travel@3x.png in Resources */,
 				50DD10D91EE3EB8C001D9084 /* back@2x.png in Resources */,
 				507BDD951ED70804005E1ABA /* play@3x.png in Resources */,
 				50D285931ED6BBF600083888 /* right@3x.png in Resources */,
+				5083E0D01EEE49FB0019CB08 /* remark@3x.png in Resources */,
 				50D285A61ED6C61E00083888 /* candy@3x.png in Resources */,
 				50DD10D81EE3EB8C001D9084 /* back@3x.png in Resources */,
 				50D285AA1ED6C61E00083888 /* coat@3x.png in Resources */,
@@ -616,6 +637,7 @@
 				505738AE1EE2671D0088D330 /* InfoPlist.strings in Resources */,
 				50D285B21ED6C61E00083888 /* house@3x.png in Resources */,
 				50D285901ED6BBF600083888 /* left@2x.png in Resources */,
+				5083E0D41EEE60760019CB08 /* calendarBG@3x.png in Resources */,
 				50D285BB1ED6C63500083888 /* travel@2x.png in Resources */,
 				50D2858B1ED68A1800083888 /* list.png in Resources */,
 				50D285B81ED6C63500083888 /* pet@2x.png in Resources */,
@@ -804,6 +826,7 @@
 				505738B61EE2918F0088D330 /* OHMoneyRunContent.m in Sources */,
 				50F4C71E1EB83537002BB65C /* Category+CoreDataProperties.m in Sources */,
 				505DF4131E9CB612002FA726 /* Acount1_0.xcdatamodeld in Sources */,
+				5083E0D71EEE73920019CB08 /* SubtitleCell.m in Sources */,
 				50F4B63C1EC4856A000A505B /* CategoryAddViewController.m in Sources */,
 				50F4C71D1EB83537002BB65C /* Category+CoreDataClass.m in Sources */,
 				503593901EA9F3CF005C5AB3 /* TabBarViewController.m in Sources */,
@@ -1116,9 +1139,10 @@
 		505DF4111E9CB612002FA726 /* Acount1_0.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				5083E0C61EEE2FE50019CB08 /* Acount1_ 2.xcdatamodel */,
 				505DF4121E9CB612002FA726 /* Acount1_0.xcdatamodel */,
 			);
-			currentVersion = 505DF4121E9CB612002FA726 /* Acount1_0.xcdatamodel */;
+			currentVersion = 5083E0C61EEE2FE50019CB08 /* Acount1_ 2.xcdatamodel */;
 			path = Acount1_0.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

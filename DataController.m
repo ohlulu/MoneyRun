@@ -127,13 +127,13 @@
         NSLog(@"getTotalMoneyGroupByMonth Error : %@",err);
     }
     
-    
     __block NSString *monthTemp;
     __block NSMutableArray *numberArray = [NSMutableArray new];
     
     [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         NSDateFormatter *format = [NSDateFormatter new];
+        [format setLocale:[NSLocale currentLocale]];
         [format setDateStyle:NSDateFormatterLongStyle];
         [format setTimeStyle:NSDateFormatterNoStyle];
         
@@ -223,7 +223,14 @@
         } else if ([calendar isDateInTomorrow:section.items[0].trueDate]) {
             section.title = NSLocalizedString(@"Tomorrow", @"Tomorrow");
         } else {
-            section.title = [obj valueForKey:@"formatDate"];
+            NSDateFormatter *formatter = [NSDateFormatter new];
+            [formatter setTimeZone:[NSTimeZone localTimeZone]];
+            
+            NSString *customFormat = [NSDateFormatter dateFormatFromTemplate:@"MMMdd eee" options:0 locale:[NSLocale currentLocale]];
+            [formatter setDateFormat:customFormat];
+            
+            NSString *dateString = [formatter stringFromDate:section.items[0].trueDate];
+            section.title = dateString;//[obj valueForKey:@"formatDate"];
         }
         [datas addObject:section];
         

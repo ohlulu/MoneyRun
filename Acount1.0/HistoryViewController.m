@@ -10,6 +10,7 @@
 #import "CustomData.h"
 #import "TopCell.h"
 #import "NormalCell.h"
+#import "SubtitleCell.h"
 #import "AddViewController.h"
 #import "OHMoneyRunContent.h"
 @import StoreKit;
@@ -22,6 +23,7 @@
     NSDate *selectDate;
     NSDateFormatter *formatMonth;
     NSDateFormatter *formatYear;
+    NSCalendar *calendar;
 }
 
 
@@ -68,6 +70,8 @@
     [super viewDidLoad];
     
     self.view.tintColor = OHSystemBrownColor;
+    self.view.backgroundColor = OHCalendarWhiteColor;
+    calendar = [NSCalendar currentCalendar];
     
     dc = [DataController sharedInstance];
 
@@ -75,6 +79,7 @@
     _tableView.dataSource = self;
     _tableView.estimatedRowHeight = 52;
     _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.backgroundColor = [UIColor clearColor];
     
     _tableView.separatorColor = [UIColor clearColor];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -107,6 +112,7 @@
     [self.datas insertObject:topData atIndex:0];
     
     // Set view's shadow
+    self.monthView.backgroundColor = OHCalendarWhiteColor;
     UIColor *color = [UIColor lightGrayColor];
     self.monthView.layer.shadowColor = [color CGColor];
     self.monthView.layer.shadowRadius = 2.0f;
@@ -173,6 +179,15 @@
 }
 
 #pragma mark - Controll Moth Button
+
+- (IBAction)monthButtonClick:(UIButton *)sender {
+    
+    NSDate *date = [NSDate date];
+    [self goToMonthWithDate:date];
+    
+}
+
+
 - (IBAction)previousMonth:(UIButton *)sender {
     
     [self setSelectMonthButtonTitleWithIncrease:NO];
@@ -185,8 +200,7 @@
 
 - (void) setSelectMonthButtonTitleWithIncrease:(BOOL) isIncrease {
     
-    // Get NSCalendar
-    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
     NSCalendarUnit unit = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear;
     NSDateComponents *components = [calendar components:unit fromDate:selectDate];
     
@@ -198,8 +212,14 @@
         selectDate = [calendar dateFromComponents:components];
     }
     
-    NSString *currentMonthString = [formatMonth stringFromDate:selectDate];
-    NSString *currentYearString = [formatYear stringFromDate:selectDate];
+    [self goToMonthWithDate:selectDate];
+    
+}
+
+- (void) goToMonthWithDate:(NSDate *) date {
+    
+    NSString *currentMonthString = [formatMonth stringFromDate:date];
+    NSString *currentYearString = [formatYear stringFromDate:date];
     [self.currentMonthButton setTitle:currentMonthString forState:UIControlStateNormal];
     self.datas = [dc loadItemsGroupByFormatMonth:currentMonthString andFormatYear:currentYearString];
     
@@ -236,39 +256,81 @@
     
     TopCell *topCell = [tableView dequeueReusableCellWithIdentifier:@"topCell" forIndexPath:indexPath];
     topCell.totalMoneyByMoth.text = [NSString localizedStringWithFormat:@"$%@",self.datas[indexPath.section].title];
+//    topCell.backgroundColor = [UIColor clearColor];
+    
+    
+    
+    
     
     NormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
+    
+    SubtitleCell *subTitleCell = [tableView dequeueReusableCellWithIdentifier:@"subTitleCell" forIndexPath:indexPath];
+    subTitleCell.backgroundColor = [UIColor clearColor];
     
     // Row with Title
     NSArray *items = self.datas[indexPath.section].items;
     Item *item = items[indexPath.row];
-    cell.titleLabel.text = item.category.name;
     
-    // Row with money
+    // Cell's money
     NSString * moneyNumber = [NSString localizedStringWithFormat:@"%.0f",[[NSNumber numberWithInt:item.money] floatValue]];
-    cell.detailLabel.text = moneyNumber;
     
-    // Row with image
-    cell.categoryImageView.image = [UIImage imageNamed:item.category.imageName];
-    
-    // Set FontSize
+    // Set Font
     [cell.detailLabel setFont:[UIFont systemFontOfSize:15.0]];
     [cell.titleLabel setFont:[UIFont systemFontOfSize:15.0]];
+    [subTitleCell.detailLabel setFont:[UIFont systemFontOfSize:15.0]];
+    [subTitleCell.titleLabel setFont:[UIFont systemFontOfSize:15.0]];
+//    cell.titleLabel.textColor = OHCalendarGrayColor;
+    subTitleCell.subTitleLabel.textColor = OHCalendarGrayColor;
+
     
     // Set money Color rgba(230.89.25.1) -> rgba(7, 2, 1, 0.3)
     cell.detailLabel.textColor = OHMoneyTextColor;
+//    [cell.titleLabel setFont:[UIFont systemFontOfSize:18]];
+//    [cell.detailLabel setFont:[UIFont systemFontOfSize:18]];
     
-    [cell.titleLabel setFont:[UIFont systemFontOfSize:18]];
-    [cell.detailLabel setFont:[UIFont systemFontOfSize:18]];
+    subTitleCell.detailLabel.textColor = OHMoneyTextColor;
+//    [cell.titleLabel setFont:[UIFont systemFontOfSize:18]];
+//    [cell.detailLabel setFont:[UIFont systemFontOfSize:18]];
     
-    
+    if (item.remark.length != 0 || item.remark != nil) {
+        
+        // Cell's image
+        subTitleCell.categoryImageView.image = [UIImage imageNamed:item.category.imageName];
+        
+        // Cell's Category name
+        subTitleCell.titleLabel.text = item.category.name;
+        
+        // Cell's remark
+        subTitleCell.subTitleLabel.text = [NSString stringWithFormat:@"# %@",item.remark];
+        
+        // Cell's money
+        subTitleCell.detailLabel.text = moneyNumber;
+        
+    } else {
+        
+        // Cell's image
+        cell.categoryImageView.image = [UIImage imageNamed:item.category.imageName];
+        
+        // Cell's Category name
+        cell.titleLabel.text = item.category.name;
+        
+        // Cell's money
+        cell.detailLabel.text = moneyNumber;
+
+    }
+       
     if (indexPath.section == 0) {
         
         return topCell;
         
     } else {
+        if (item.remark != nil) {
+            return subTitleCell;
+        } else {
+            return cell;
+        }
         
-        return cell;
         
     }
     
@@ -296,8 +358,8 @@
     [dateLabel setFont:[UIFont systemFontOfSize:16]];
     [totalLabel setFont:[UIFont systemFontOfSize:18]];
     [totalLabel setTextAlignment:NSTextAlignmentRight];
-    
-    totalLabel.textColor = OHHeaderViewTitleColor;
+    dateLabel.textColor = OHHeaderViewDateTextColor;
+    totalLabel.textColor = OHHeaderViewMoneyTextColor;
     
     // Total money in Section header
     __block NSInteger total = 0;
