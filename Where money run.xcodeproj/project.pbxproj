@@ -125,7 +125,7 @@
 		505738B31EE267720088D330 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		505738B41EE2918F0088D330 /* OHMoneyRunContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHMoneyRunContent.h; sourceTree = "<group>"; };
 		505738B51EE2918F0088D330 /* OHMoneyRunContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHMoneyRunContent.m; sourceTree = "<group>"; };
-		505DF4021E9CB612002FA726 /* Acount1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acount1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		505DF4021E9CB612002FA726 /* Where money run.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Where money run.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		505DF4061E9CB612002FA726 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		505DF4081E9CB612002FA726 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		505DF4091E9CB612002FA726 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,10 +136,10 @@
 		505DF4141E9CB612002FA726 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		505DF4171E9CB612002FA726 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		505DF4191E9CB612002FA726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		505DF41E1E9CB612002FA726 /* Acount1.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Acount1.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		505DF41E1E9CB612002FA726 /* Where money runTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Where money runTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		505DF4221E9CB612002FA726 /* Acount1_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Acount1_0Tests.m; sourceTree = "<group>"; };
 		505DF4241E9CB612002FA726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		505DF4291E9CB612002FA726 /* Acount1.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Acount1.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		505DF4291E9CB612002FA726 /* Where money runUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Where money runUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		505DF42D1E9CB612002FA726 /* Acount1_0UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Acount1_0UITests.m; sourceTree = "<group>"; };
 		505DF42F1E9CB612002FA726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		506029501EEFD0DE00F20D7C /* setup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setup@2x.png"; sourceTree = "<group>"; };
@@ -336,9 +336,9 @@
 		505DF4031E9CB612002FA726 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				505DF4021E9CB612002FA726 /* Acount1.0.app */,
-				505DF41E1E9CB612002FA726 /* Acount1.0Tests.xctest */,
-				505DF4291E9CB612002FA726 /* Acount1.0UITests.xctest */,
+				505DF4021E9CB612002FA726 /* Where money run.app */,
+				505DF41E1E9CB612002FA726 /* Where money runTests.xctest */,
+				505DF4291E9CB612002FA726 /* Where money runUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -503,9 +503,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		505DF4011E9CB612002FA726 /* Acount1.0 */ = {
+		505DF4011E9CB612002FA726 /* Where money run */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 505DF4321E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Acount1.0" */;
+			buildConfigurationList = 505DF4321E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Where money run" */;
 			buildPhases = (
 				EC7E3F7F13A2865835492887 /* [CP] Check Pods Manifest.lock */,
 				505DF3FE1E9CB612002FA726 /* Sources */,
@@ -519,14 +519,14 @@
 			);
 			dependencies = (
 			);
-			name = Acount1.0;
+			name = "Where money run";
 			productName = Acount1.0;
-			productReference = 505DF4021E9CB612002FA726 /* Acount1.0.app */;
+			productReference = 505DF4021E9CB612002FA726 /* Where money run.app */;
 			productType = "com.apple.product-type.application";
 		};
-		505DF41D1E9CB612002FA726 /* Acount1.0Tests */ = {
+		505DF41D1E9CB612002FA726 /* Where money runTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 505DF4351E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Acount1.0Tests" */;
+			buildConfigurationList = 505DF4351E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Where money runTests" */;
 			buildPhases = (
 				760B2C7D1155388DF8788347 /* [CP] Check Pods Manifest.lock */,
 				505DF41A1E9CB612002FA726 /* Sources */,
@@ -540,14 +540,14 @@
 			dependencies = (
 				505DF4201E9CB612002FA726 /* PBXTargetDependency */,
 			);
-			name = Acount1.0Tests;
+			name = "Where money runTests";
 			productName = Acount1.0Tests;
-			productReference = 505DF41E1E9CB612002FA726 /* Acount1.0Tests.xctest */;
+			productReference = 505DF41E1E9CB612002FA726 /* Where money runTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		505DF4281E9CB612002FA726 /* Acount1.0UITests */ = {
+		505DF4281E9CB612002FA726 /* Where money runUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 505DF4381E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Acount1.0UITests" */;
+			buildConfigurationList = 505DF4381E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Where money runUITests" */;
 			buildPhases = (
 				9E33FD94535301DBB65D6AC7 /* [CP] Check Pods Manifest.lock */,
 				505DF4251E9CB612002FA726 /* Sources */,
@@ -561,9 +561,9 @@
 			dependencies = (
 				505DF42B1E9CB612002FA726 /* PBXTargetDependency */,
 			);
-			name = Acount1.0UITests;
+			name = "Where money runUITests";
 			productName = Acount1.0UITests;
-			productReference = 505DF4291E9CB612002FA726 /* Acount1.0UITests.xctest */;
+			productReference = 505DF4291E9CB612002FA726 /* Where money runUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -592,7 +592,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 505DF3FD1E9CB612002FA726 /* Build configuration list for PBXProject "Acount1.0" */;
+			buildConfigurationList = 505DF3FD1E9CB612002FA726 /* Build configuration list for PBXProject "Where money run" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -606,9 +606,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				505DF4011E9CB612002FA726 /* Acount1.0 */,
-				505DF41D1E9CB612002FA726 /* Acount1.0Tests */,
-				505DF4281E9CB612002FA726 /* Acount1.0UITests */,
+				505DF4011E9CB612002FA726 /* Where money run */,
+				505DF41D1E9CB612002FA726 /* Where money runTests */,
+				505DF4281E9CB612002FA726 /* Where money runUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -889,12 +889,12 @@
 /* Begin PBXTargetDependency section */
 		505DF4201E9CB612002FA726 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 505DF4011E9CB612002FA726 /* Acount1.0 */;
+			target = 505DF4011E9CB612002FA726 /* Where money run */;
 			targetProxy = 505DF41F1E9CB612002FA726 /* PBXContainerItemProxy */;
 		};
 		505DF42B1E9CB612002FA726 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 505DF4011E9CB612002FA726 /* Acount1.0 */;
+			target = 505DF4011E9CB612002FA726 /* Where money run */;
 			targetProxy = 505DF42A1E9CB612002FA726 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1073,7 +1073,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ohlulu.Acount1-0Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Acount1.0.app/Acount1.0";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Where money run.app/Where money run";
 			};
 			name = Debug;
 		};
@@ -1086,7 +1086,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ohlulu.Acount1-0Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Acount1.0.app/Acount1.0";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Where money run.app/Where money run";
 			};
 			name = Release;
 		};
@@ -1117,7 +1117,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		505DF3FD1E9CB612002FA726 /* Build configuration list for PBXProject "Acount1.0" */ = {
+		505DF3FD1E9CB612002FA726 /* Build configuration list for PBXProject "Where money run" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				505DF4301E9CB612002FA726 /* Debug */,
@@ -1126,7 +1126,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		505DF4321E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Acount1.0" */ = {
+		505DF4321E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Where money run" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				505DF4331E9CB612002FA726 /* Debug */,
@@ -1135,7 +1135,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		505DF4351E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Acount1.0Tests" */ = {
+		505DF4351E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Where money runTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				505DF4361E9CB612002FA726 /* Debug */,
@@ -1144,7 +1144,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		505DF4381E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Acount1.0UITests" */ = {
+		505DF4381E9CB612002FA726 /* Build configuration list for PBXNativeTarget "Where money runUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				505DF4391E9CB612002FA726 /* Debug */,
