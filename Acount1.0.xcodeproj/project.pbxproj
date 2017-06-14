@@ -25,6 +25,10 @@
 		505DF4181E9CB612002FA726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 505DF4161E9CB612002FA726 /* LaunchScreen.storyboard */; };
 		505DF4231E9CB612002FA726 /* Acount1_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DF4221E9CB612002FA726 /* Acount1_0Tests.m */; };
 		505DF42E1E9CB612002FA726 /* Acount1_0UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DF42D1E9CB612002FA726 /* Acount1_0UITests.m */; };
+		506029511EEFD0DE00F20D7C /* setup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 506029501EEFD0DE00F20D7C /* setup@2x.png */; };
+		506029571EEFD7AE00F20D7C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029561EEFD7AE00F20D7C /* SettingViewController.m */; };
+		5060295A1EEFF08200F20D7C /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029591EEFF08200F20D7C /* SettingTableViewCell.m */; };
+		5060295C1EF0068000F20D7C /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 5060295B1EF0068000F20D7C /* ok.png */; };
 		507BDD941ED70804005E1ABA /* drink@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 507BDD921ED70804005E1ABA /* drink@3x.png */; };
 		507BDD951ED70804005E1ABA /* play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 507BDD931ED70804005E1ABA /* play@3x.png */; };
 		507BDD971ED726A7005E1ABA /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 507BDD961ED726A7005E1ABA /* list@2x.png */; };
@@ -138,6 +142,12 @@
 		505DF4291E9CB612002FA726 /* Acount1.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Acount1.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		505DF42D1E9CB612002FA726 /* Acount1_0UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Acount1_0UITests.m; sourceTree = "<group>"; };
 		505DF42F1E9CB612002FA726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		506029501EEFD0DE00F20D7C /* setup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setup@2x.png"; sourceTree = "<group>"; };
+		506029551EEFD7AE00F20D7C /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		506029561EEFD7AE00F20D7C /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		506029581EEFF08200F20D7C /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
+		506029591EEFF08200F20D7C /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
+		5060295B1EF0068000F20D7C /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
 		507BDD921ED70804005E1ABA /* drink@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drink@3x.png"; sourceTree = "<group>"; };
 		507BDD931ED70804005E1ABA /* play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@3x.png"; sourceTree = "<group>"; };
 		507BDD961ED726A7005E1ABA /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list@2x.png"; path = "../list@2x.png"; sourceTree = "<group>"; };
@@ -264,6 +274,8 @@
 				50D2858F1ED6BBF600083888 /* right@3x.png */,
 				50D285941ED6BC0300083888 /* add@3x.png */,
 				50D285841ED669AF00083888 /* add@2x.png */,
+				506029501EEFD0DE00F20D7C /* setup@2x.png */,
+				5060295B1EF0068000F20D7C /* ok.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -445,6 +457,10 @@
 				50D353191EC42C4C005BDB5D /* CategoryEditViewController.m */,
 				50F4B63A1EC4856A000A505B /* CategoryAddViewController.h */,
 				50F4B63B1EC4856A000A505B /* CategoryAddViewController.m */,
+				506029551EEFD7AE00F20D7C /* SettingViewController.h */,
+				506029561EEFD7AE00F20D7C /* SettingViewController.m */,
+				506029581EEFF08200F20D7C /* SettingTableViewCell.h */,
+				506029591EEFF08200F20D7C /* SettingTableViewCell.m */,
 			);
 			name = SettingView;
 			sourceTree = "<group>";
@@ -606,6 +622,7 @@
 				505DF4181E9CB612002FA726 /* LaunchScreen.storyboard in Resources */,
 				50D285BF1ED6D15500083888 /* calendar@2x.png in Resources */,
 				50D285951ED6BC0300083888 /* add@3x.png in Resources */,
+				5060295C1EF0068000F20D7C /* ok.png in Resources */,
 				50D285B01ED6C61E00083888 /* food@3x.png in Resources */,
 				507FCDE81EE69EB80099EC76 /* Localizable.strings in Resources */,
 				505DF4151E9CB612002FA726 /* Assets.xcassets in Resources */,
@@ -617,6 +634,7 @@
 				50D285A71ED6C61E00083888 /* car@2x.png in Resources */,
 				50D285AF1ED6C61E00083888 /* food@2x.png in Resources */,
 				50D285B11ED6C61E00083888 /* house@2x.png in Resources */,
+				506029511EEFD0DE00F20D7C /* setup@2x.png in Resources */,
 				50D285911ED6BBF600083888 /* left@3x.png in Resources */,
 				5083E0D31EEE60760019CB08 /* calenderBG@2x.png in Resources */,
 				50D285AD1ED6C61E00083888 /* doctor@3x.png in Resources */,
@@ -835,7 +853,9 @@
 				502DAD951EBFFCF000707524 /* TopCell.m in Sources */,
 				503593851EA8E13D005C5AB3 /* AddViewController.m in Sources */,
 				50D3531A1EC42C4C005BDB5D /* CategoryEditViewController.m in Sources */,
+				506029571EEFD7AE00F20D7C /* SettingViewController.m in Sources */,
 				50F4C7241EB84C98002BB65C /* Item+CoreDataProperties.m in Sources */,
+				5060295A1EEFF08200F20D7C /* SettingTableViewCell.m in Sources */,
 				5083E0C51EEA6CF10019CB08 /* SectionHeaderView.m in Sources */,
 				50B5BF151EBB1F5D0059F59C /* CustomData.m in Sources */,
 				505DF40D1E9CB612002FA726 /* ViewController.m in Sources */,

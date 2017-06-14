@@ -13,6 +13,7 @@
 #import "SubtitleCell.h"
 #import "AddViewController.h"
 #import "OHMoneyRunContent.h"
+#import "SettingViewController.h"
 @import StoreKit;
 
 @interface HistoryViewController () <UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,AddViewControllerDelegate,UIAlertViewDelegate,SKStoreProductViewControllerDelegate>
@@ -438,6 +439,15 @@
         
     }
 }
+
+- (IBAction)settingButtonClick:(UIButton *)sender {
+    
+//    SettingViewController *setVC = [SettingViewController new];
+//    
+//    [self.navigationController pushViewController:setVC animated:YES];
+    
+}
+
 
 #pragma mark - AddViewControllerDelegate
 -(void)didFinishEditItem:(Item *)item {
