@@ -12,8 +12,10 @@
 #import "HistoryViewController.h"
 #import "DataController.h"
 #import "OHMoneyRunContent.h"
-//#import <Fabric/Fabric.h>
-//#import <Crashlytics/Crashlytics.h>
+#import <UserNotifications/UserNotifications.h>
+
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 @import GoogleMobileAds;
 @import Firebase;
 
@@ -21,7 +23,7 @@
 
 
 
-@interface AppDelegate ()
+@interface AppDelegate () <UNUserNotificationCenterDelegate>
 
 
 @end
@@ -32,7 +34,8 @@
     
     NSLog(@"HOME PAHT : %@",NSHomeDirectory());
     
-//    [Fabric with:@[[Crashlytics class]]];
+    
+    [Fabric with:@[[Crashlytics class]]];
     [FIRApp configure];
     
     UITextField *lagFreeField = [[UITextField alloc] init];
@@ -40,6 +43,8 @@
     [lagFreeField becomeFirstResponder];
     [lagFreeField resignFirstResponder];
     [lagFreeField removeFromSuperview];
+    
+    
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -66,9 +71,8 @@
     }
     
     NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
-    NSLog(@"Version : %@",version);
-    
-    
+
+
     NSString *versionFromBox = [defaults stringForKey:shortVersion];
     if (![version isEqualToString:versionFromBox]) {
         [defaults setInteger:0 forKey:addBtnPressCount];
@@ -86,8 +90,8 @@
     }];
     [dc saveToCoreData];
     
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 
-    
     return YES;
 }
 
@@ -109,12 +113,13 @@
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 

@@ -14,12 +14,12 @@
     [super awakeFromNib];
     
     self.totalMoneyByMoth.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    self.totalMoneyByMoth.layer.shadowOffset = CGSizeMake(5, 5);
-    self.totalMoneyByMoth.layer.shadowRadius = 2.0f;
+    self.totalMoneyByMoth.layer.shadowOffset = CGSizeMake(2, 2);
+    self.totalMoneyByMoth.layer.shadowRadius = 4.0f;
     self.totalMoneyByMoth.layer.shadowOpacity = 0.67f;
     
     self.subTitleLabel.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    self.subTitleLabel.layer.shadowOffset = CGSizeMake(5, 5);
+    self.subTitleLabel.layer.shadowOffset = CGSizeMake(2, 2);
     self.subTitleLabel.layer.shadowOpacity = 0.67f;
     
     // Initialization code

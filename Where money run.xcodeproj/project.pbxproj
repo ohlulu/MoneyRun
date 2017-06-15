@@ -25,10 +25,25 @@
 		505DF4181E9CB612002FA726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 505DF4161E9CB612002FA726 /* LaunchScreen.storyboard */; };
 		505DF4231E9CB612002FA726 /* Acount1_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DF4221E9CB612002FA726 /* Acount1_0Tests.m */; };
 		505DF42E1E9CB612002FA726 /* Acount1_0UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 505DF42D1E9CB612002FA726 /* Acount1_0UITests.m */; };
+		505F46C31EF2904300AA4231 /* open@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46C21EF2904300AA4231 /* open@3x.png */; };
+		505F46C51EF2905500AA4231 /* share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46C41EF2905500AA4231 /* share@3x.png */; };
+		505F46C71EF2906D00AA4231 /* time@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46C61EF2906D00AA4231 /* time@3x.png */; };
+		505F46D11EF2B7ED00AA4231 /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46D01EF2B7ED00AA4231 /* tag@2x.png */; };
+		505F46D31EF2B83000AA4231 /* open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46D21EF2B83000AA4231 /* open@2x.png */; };
+		505F46D71EF2B97A00AA4231 /* mail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46D61EF2B97A00AA4231 /* mail@3x.png */; };
+		505F46D91EF2B99700AA4231 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46D81EF2B99700AA4231 /* mail@2x.png */; };
+		505F46DB1EF2BA0300AA4231 /* time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46DA1EF2BA0300AA4231 /* time@2x.png */; };
+		505F46DD1EF2C00C00AA4231 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46DC1EF2C00C00AA4231 /* share@2x.png */; };
+		505F46DF1EF2C07F00AA4231 /* like@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46DE1EF2C07F00AA4231 /* like@3x.png */; };
+		505F46E11EF2C09700AA4231 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46E01EF2C09700AA4231 /* like@2x.png */; };
 		506029511EEFD0DE00F20D7C /* setup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 506029501EEFD0DE00F20D7C /* setup@2x.png */; };
-		506029571EEFD7AE00F20D7C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029561EEFD7AE00F20D7C /* SettingViewController.m */; };
 		5060295A1EEFF08200F20D7C /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029591EEFF08200F20D7C /* SettingTableViewCell.m */; };
-		5060295C1EF0068000F20D7C /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 5060295B1EF0068000F20D7C /* ok.png */; };
+		506029611EF0E61000F20D7C /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029601EF0E61000F20D7C /* NotificationViewController.m */; };
+		506029641EF0E7B300F20D7C /* SettingDataList.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029631EF0E7B300F20D7C /* SettingDataList.m */; };
+		506029671EF0EBBE00F20D7C /* SettingTableViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029661EF0EBBE00F20D7C /* SettingTableViewContoller.m */; };
+		5060296A1EF11A3300F20D7C /* SelectedTiemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029691EF11A3300F20D7C /* SelectedTiemViewController.m */; };
+		5060296C1EF2843E00F20D7C /* tick@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5060296B1EF2843E00F20D7C /* tick@3x.png */; };
+		5060296E1EF28EEA00F20D7C /* tag@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5060296D1EF28EEA00F20D7C /* tag@3x.png */; };
 		507BDD941ED70804005E1ABA /* drink@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 507BDD921ED70804005E1ABA /* drink@3x.png */; };
 		507BDD951ED70804005E1ABA /* play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 507BDD931ED70804005E1ABA /* play@3x.png */; };
 		507BDD971ED726A7005E1ABA /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 507BDD961ED726A7005E1ABA /* list@2x.png */; };
@@ -142,12 +157,30 @@
 		505DF4291E9CB612002FA726 /* Where money runUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Where money runUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		505DF42D1E9CB612002FA726 /* Acount1_0UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Acount1_0UITests.m; sourceTree = "<group>"; };
 		505DF42F1E9CB612002FA726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		505F46C21EF2904300AA4231 /* open@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open@3x.png"; sourceTree = "<group>"; };
+		505F46C41EF2905500AA4231 /* share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@3x.png"; sourceTree = "<group>"; };
+		505F46C61EF2906D00AA4231 /* time@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time@3x.png"; sourceTree = "<group>"; };
+		505F46D01EF2B7ED00AA4231 /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag@2x.png"; sourceTree = "<group>"; };
+		505F46D21EF2B83000AA4231 /* open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "open@2x.png"; sourceTree = "<group>"; };
+		505F46D61EF2B97A00AA4231 /* mail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@3x.png"; sourceTree = "<group>"; };
+		505F46D81EF2B99700AA4231 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
+		505F46DA1EF2BA0300AA4231 /* time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "time@2x.png"; sourceTree = "<group>"; };
+		505F46DC1EF2C00C00AA4231 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
+		505F46DE1EF2C07F00AA4231 /* like@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@3x.png"; sourceTree = "<group>"; };
+		505F46E01EF2C09700AA4231 /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
 		506029501EEFD0DE00F20D7C /* setup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setup@2x.png"; sourceTree = "<group>"; };
-		506029551EEFD7AE00F20D7C /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		506029561EEFD7AE00F20D7C /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		506029581EEFF08200F20D7C /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		506029591EEFF08200F20D7C /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
-		5060295B1EF0068000F20D7C /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		5060295F1EF0E61000F20D7C /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		506029601EF0E61000F20D7C /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		506029621EF0E7B300F20D7C /* SettingDataList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingDataList.h; sourceTree = "<group>"; };
+		506029631EF0E7B300F20D7C /* SettingDataList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingDataList.m; sourceTree = "<group>"; };
+		506029651EF0EBBE00F20D7C /* SettingTableViewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewContoller.h; sourceTree = "<group>"; };
+		506029661EF0EBBE00F20D7C /* SettingTableViewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewContoller.m; sourceTree = "<group>"; };
+		506029681EF11A3300F20D7C /* SelectedTiemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedTiemViewController.h; sourceTree = "<group>"; };
+		506029691EF11A3300F20D7C /* SelectedTiemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedTiemViewController.m; sourceTree = "<group>"; };
+		5060296B1EF2843E00F20D7C /* tick@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick@3x.png"; sourceTree = "<group>"; };
+		5060296D1EF28EEA00F20D7C /* tag@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag@3x.png"; sourceTree = "<group>"; };
 		507BDD921ED70804005E1ABA /* drink@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drink@3x.png"; sourceTree = "<group>"; };
 		507BDD931ED70804005E1ABA /* play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@3x.png"; sourceTree = "<group>"; };
 		507BDD961ED726A7005E1ABA /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list@2x.png"; path = "../list@2x.png"; sourceTree = "<group>"; };
@@ -255,6 +288,7 @@
 		5035937F1EA8E0DB005C5AB3 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				5060296F1EF28EF100F20D7C /* SettingView */,
 				50D285961ED6C5F300083888 /* CategoryImage */,
 				50DD10D61EE3EB8C001D9084 /* back@3x.png */,
 				50DD10D71EE3EB8C001D9084 /* back@2x.png */,
@@ -275,7 +309,7 @@
 				50D285941ED6BC0300083888 /* add@3x.png */,
 				50D285841ED669AF00083888 /* add@2x.png */,
 				506029501EEFD0DE00F20D7C /* setup@2x.png */,
-				5060295B1EF0068000F20D7C /* ok.png */,
+				5060296B1EF2843E00F20D7C /* tick@3x.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -399,6 +433,49 @@
 			path = Acount1.0UITests;
 			sourceTree = "<group>";
 		};
+		5060295D1EF0E45400F20D7C /* SettingCell */ = {
+			isa = PBXGroup;
+			children = (
+				506029581EEFF08200F20D7C /* SettingTableViewCell.h */,
+				506029591EEFF08200F20D7C /* SettingTableViewCell.m */,
+			);
+			name = SettingCell;
+			sourceTree = "<group>";
+		};
+		5060295E1EF0E5C600F20D7C /* SettingDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				50D353181EC42C4C005BDB5D /* CategoryEditViewController.h */,
+				50D353191EC42C4C005BDB5D /* CategoryEditViewController.m */,
+				50F4B63A1EC4856A000A505B /* CategoryAddViewController.h */,
+				50F4B63B1EC4856A000A505B /* CategoryAddViewController.m */,
+				5060295F1EF0E61000F20D7C /* NotificationViewController.h */,
+				506029601EF0E61000F20D7C /* NotificationViewController.m */,
+				506029681EF11A3300F20D7C /* SelectedTiemViewController.h */,
+				506029691EF11A3300F20D7C /* SelectedTiemViewController.m */,
+			);
+			name = SettingDetailViewController;
+			sourceTree = "<group>";
+		};
+		5060296F1EF28EF100F20D7C /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				505F46E01EF2C09700AA4231 /* like@2x.png */,
+				505F46DE1EF2C07F00AA4231 /* like@3x.png */,
+				505F46D81EF2B99700AA4231 /* mail@2x.png */,
+				505F46D61EF2B97A00AA4231 /* mail@3x.png */,
+				505F46DA1EF2BA0300AA4231 /* time@2x.png */,
+				505F46C61EF2906D00AA4231 /* time@3x.png */,
+				505F46DC1EF2C00C00AA4231 /* share@2x.png */,
+				505F46C41EF2905500AA4231 /* share@3x.png */,
+				505F46D21EF2B83000AA4231 /* open@2x.png */,
+				505F46C21EF2904300AA4231 /* open@3x.png */,
+				505F46D01EF2B7ED00AA4231 /* tag@2x.png */,
+				5060296D1EF28EEA00F20D7C /* tag@3x.png */,
+			);
+			name = SettingView;
+			sourceTree = "<group>";
+		};
 		50B5BF121EBB1E9E0059F59C /* SortData */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,14 +530,12 @@
 		50D353171EC42C09005BDB5D /* SettingView */ = {
 			isa = PBXGroup;
 			children = (
-				50D353181EC42C4C005BDB5D /* CategoryEditViewController.h */,
-				50D353191EC42C4C005BDB5D /* CategoryEditViewController.m */,
-				50F4B63A1EC4856A000A505B /* CategoryAddViewController.h */,
-				50F4B63B1EC4856A000A505B /* CategoryAddViewController.m */,
-				506029551EEFD7AE00F20D7C /* SettingViewController.h */,
-				506029561EEFD7AE00F20D7C /* SettingViewController.m */,
-				506029581EEFF08200F20D7C /* SettingTableViewCell.h */,
-				506029591EEFF08200F20D7C /* SettingTableViewCell.m */,
+				506029651EF0EBBE00F20D7C /* SettingTableViewContoller.h */,
+				506029661EF0EBBE00F20D7C /* SettingTableViewContoller.m */,
+				506029621EF0E7B300F20D7C /* SettingDataList.h */,
+				506029631EF0E7B300F20D7C /* SettingDataList.m */,
+				5060295D1EF0E45400F20D7C /* SettingCell */,
+				5060295E1EF0E5C600F20D7C /* SettingDetailViewController */,
 			);
 			name = SettingView;
 			sourceTree = "<group>";
@@ -618,19 +693,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505F46DB1EF2BA0300AA4231 /* time@2x.png in Resources */,
 				507BDD941ED70804005E1ABA /* drink@3x.png in Resources */,
 				505DF4181E9CB612002FA726 /* LaunchScreen.storyboard in Resources */,
 				50D285BF1ED6D15500083888 /* calendar@2x.png in Resources */,
 				50D285951ED6BC0300083888 /* add@3x.png in Resources */,
-				5060295C1EF0068000F20D7C /* ok.png in Resources */,
 				50D285B01ED6C61E00083888 /* food@3x.png in Resources */,
 				507FCDE81EE69EB80099EC76 /* Localizable.strings in Resources */,
+				505F46D71EF2B97A00AA4231 /* mail@3x.png in Resources */,
+				505F46DF1EF2C07F00AA4231 /* like@3x.png in Resources */,
 				505DF4151E9CB612002FA726 /* Assets.xcassets in Resources */,
 				50DD10D51EE2FD3D001D9084 /* GoogleService-Info.plist in Resources */,
 				5083E0CF1EEE49FB0019CB08 /* remark@2x.png in Resources */,
 				50D285A81ED6C61E00083888 /* car@3x.png in Resources */,
+				505F46DD1EF2C00C00AA4231 /* share@2x.png in Resources */,
 				50D285C01ED6D15500083888 /* calendar@3x.png in Resources */,
 				505DF4101E9CB612002FA726 /* Main.storyboard in Resources */,
+				505F46D31EF2B83000AA4231 /* open@2x.png in Resources */,
 				50D285A71ED6C61E00083888 /* car@2x.png in Resources */,
 				50D285AF1ED6C61E00083888 /* food@2x.png in Resources */,
 				50D285B11ED6C61E00083888 /* house@2x.png in Resources */,
@@ -640,6 +719,7 @@
 				50D285AD1ED6C61E00083888 /* doctor@3x.png in Resources */,
 				50D285BC1ED6C63500083888 /* travel@3x.png in Resources */,
 				50DD10D91EE3EB8C001D9084 /* back@2x.png in Resources */,
+				505F46C51EF2905500AA4231 /* share@3x.png in Resources */,
 				507BDD951ED70804005E1ABA /* play@3x.png in Resources */,
 				50D285931ED6BBF600083888 /* right@3x.png in Resources */,
 				5083E0D01EEE49FB0019CB08 /* remark@3x.png in Resources */,
@@ -648,12 +728,18 @@
 				50D285AA1ED6C61E00083888 /* coat@3x.png in Resources */,
 				50D285871ED669AF00083888 /* add@2x.png in Resources */,
 				507BDD971ED726A7005E1ABA /* list@2x.png in Resources */,
+				505F46C31EF2904300AA4231 /* open@3x.png in Resources */,
+				5060296E1EF28EEA00F20D7C /* tag@3x.png in Resources */,
+				505F46E11EF2C09700AA4231 /* like@2x.png in Resources */,
 				50D285A91ED6C61E00083888 /* coat@2x.png in Resources */,
+				505F46C71EF2906D00AA4231 /* time@3x.png in Resources */,
 				50D285AE1ED6C61E00083888 /* drink@2x.png in Resources */,
 				50D285A51ED6C61E00083888 /* candy@2x.png in Resources */,
 				50B87A8C1EDEEE96000A8506 /* analysis@2x.png in Resources */,
+				5060296C1EF2843E00F20D7C /* tick@3x.png in Resources */,
 				505738AE1EE2671D0088D330 /* InfoPlist.strings in Resources */,
 				50D285B21ED6C61E00083888 /* house@3x.png in Resources */,
+				505F46D11EF2B7ED00AA4231 /* tag@2x.png in Resources */,
 				50D285901ED6BBF600083888 /* left@2x.png in Resources */,
 				5083E0D41EEE60760019CB08 /* calendarBG@3x.png in Resources */,
 				50D285BB1ED6C63500083888 /* travel@2x.png in Resources */,
@@ -664,6 +750,7 @@
 				50B87A8D1EDEEE96000A8506 /* analysis@3x.png in Resources */,
 				50D285921ED6BBF600083888 /* right@2x.png in Resources */,
 				50D285B91ED6C63500083888 /* pet@3x.png in Resources */,
+				505F46D91EF2B99700AA4231 /* mail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,21 +931,24 @@
 				505738B61EE2918F0088D330 /* OHMoneyRunContent.m in Sources */,
 				50F4C71E1EB83537002BB65C /* Category+CoreDataProperties.m in Sources */,
 				505DF4131E9CB612002FA726 /* Acount1_0.xcdatamodeld in Sources */,
+				506029611EF0E61000F20D7C /* NotificationViewController.m in Sources */,
 				5083E0D71EEE73920019CB08 /* SubtitleCell.m in Sources */,
 				50F4B63C1EC4856A000A505B /* CategoryAddViewController.m in Sources */,
 				50F4C71D1EB83537002BB65C /* Category+CoreDataClass.m in Sources */,
 				503593901EA9F3CF005C5AB3 /* TabBarViewController.m in Sources */,
 				5056B1311EC1F6E30095D967 /* CalendarViewController.m in Sources */,
 				50F4C7231EB84C98002BB65C /* Item+CoreDataClass.m in Sources */,
+				506029641EF0E7B300F20D7C /* SettingDataList.m in Sources */,
 				502DAD951EBFFCF000707524 /* TopCell.m in Sources */,
 				503593851EA8E13D005C5AB3 /* AddViewController.m in Sources */,
 				50D3531A1EC42C4C005BDB5D /* CategoryEditViewController.m in Sources */,
-				506029571EEFD7AE00F20D7C /* SettingViewController.m in Sources */,
 				50F4C7241EB84C98002BB65C /* Item+CoreDataProperties.m in Sources */,
 				5060295A1EEFF08200F20D7C /* SettingTableViewCell.m in Sources */,
 				5083E0C51EEA6CF10019CB08 /* SectionHeaderView.m in Sources */,
 				50B5BF151EBB1F5D0059F59C /* CustomData.m in Sources */,
 				505DF40D1E9CB612002FA726 /* ViewController.m in Sources */,
+				506029671EF0EBBE00F20D7C /* SettingTableViewContoller.m in Sources */,
+				5060296A1EF11A3300F20D7C /* SelectedTiemViewController.m in Sources */,
 				503593821EA8E124005C5AB3 /* HistoryViewController.m in Sources */,
 				505DF40A1E9CB612002FA726 /* AppDelegate.m in Sources */,
 				507FCDEE1EE6D3030099EC76 /* AnalysisTableViewcontroller.m in Sources */,

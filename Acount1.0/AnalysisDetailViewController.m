@@ -323,9 +323,9 @@
     
     self.scView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.scView.topAnchor constraintEqualToAnchor:self.pieChartView.bottomAnchor constant:0].active = YES;
-    [self.scView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:0].active = YES;
-    [self.scView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:0].active = YES;
-    [self.scView.bottomAnchor constraintEqualToAnchor:self.bottomLayoutGuide.topAnchor constant:-10].active = YES;
+    [self.scView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:8].active = YES;
+    [self.scView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-8].active = YES;
+    [self.scView.bottomAnchor constraintEqualToAnchor:self.bottomLayoutGuide.topAnchor constant:-8].active = YES;
     
     self.scView.contentSize = CGSizeMake(self.view.frame.size.width, self.barChartView.frame.origin.y+self.barChartView.frame.size.height+10);
     

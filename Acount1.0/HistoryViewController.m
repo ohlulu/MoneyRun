@@ -13,7 +13,7 @@
 #import "SubtitleCell.h"
 #import "AddViewController.h"
 #import "OHMoneyRunContent.h"
-#import "SettingViewController.h"
+#import "SettingTableViewContoller.h"
 @import StoreKit;
 
 @interface HistoryViewController () <UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate,AddViewControllerDelegate,UIAlertViewDelegate,SKStoreProductViewControllerDelegate>
@@ -259,10 +259,6 @@
     topCell.totalMoneyByMoth.text = [NSString localizedStringWithFormat:@"$%@",self.datas[indexPath.section].title];
 //    topCell.backgroundColor = [UIColor clearColor];
     
-    
-    
-    
-    
     NormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
     
@@ -298,6 +294,7 @@
         
         // Cell's image
         subTitleCell.categoryImageView.image = [UIImage imageNamed:item.category.imageName];
+        
         
         // Cell's Category name
         subTitleCell.titleLabel.text = item.category.name;
@@ -402,13 +399,20 @@
 
 #pragma mark - UITableViewDelegate
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return NO;
+    }
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
 
--(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSLog(@"Delect");
         Item *item = self.datas[indexPath.section].items[indexPath.row];
@@ -442,9 +446,9 @@
 
 - (IBAction)settingButtonClick:(UIButton *)sender {
     
-//    SettingViewController *setVC = [SettingViewController new];
-//    
-//    [self.navigationController pushViewController:setVC animated:YES];
+    SettingTableViewContoller *setVC = [self.storyboard instantiateViewControllerWithIdentifier:@"settingTableView"];
+    
+    [self.navigationController pushViewController:setVC animated:YES];
     
 }
 

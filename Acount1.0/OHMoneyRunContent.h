@@ -16,6 +16,8 @@
 #define addBtnPressCount                    @"addBtnPressCount"
 #define shortVersion                        @"shortVersion"
 #define isShowStoreReview                   @"isShowStoreReview"
+#define hasNotify                           @"hasNotify"
+#define notityTime                          @"notityTime"
 
 #define OHColorRGBA(r,g,b,a)                [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a];
 
@@ -32,7 +34,8 @@
 #define OHCalendarBrownColor                OHColorRGBA(224, 168, 142, 1)
 #define OHCalendarGrayColor                 OHColorRGBA(75, 78, 79, 1)
 #define OHCalendarGrayAlphColor             OHColorRGBA(75, 78, 79, 0.3)
-
+#define OHCalendarGrayWhiteColor            OHColorRGBA(232, 232, 232,1)
+#define OHSettingViewBackgroundColor        OHColorRGBA(233, 228 ,225 ,1)
 #define FORMAT_MONTH @"MMM"
 #define FORMAT_YEAR @"yyyy"
 
