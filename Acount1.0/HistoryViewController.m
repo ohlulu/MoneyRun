@@ -290,11 +290,10 @@
 //    [cell.titleLabel setFont:[UIFont systemFontOfSize:18]];
 //    [cell.detailLabel setFont:[UIFont systemFontOfSize:18]];
     
-    if (item.remark.length != 0 || item.remark != nil) {
-        
+    if (item.remark.length != 0) {
+         
         // Cell's image
         subTitleCell.categoryImageView.image = [UIImage imageNamed:item.category.imageName];
-        
         
         // Cell's Category name
         subTitleCell.titleLabel.text = item.category.name;
@@ -304,6 +303,8 @@
         
         // Cell's money
         subTitleCell.detailLabel.text = moneyNumber;
+        
+        NSLog(@"sub:%@ remark:%@",item.category.name,item.remark);
         
     } else {
         
@@ -315,6 +316,8 @@
         
         // Cell's money
         cell.detailLabel.text = moneyNumber;
+        
+        NSLog(@"cell:%@ remark:%@",item.category.name,item.remark);
 
     }
        
@@ -323,7 +326,7 @@
         return topCell;
         
     } else {
-        if (item.remark != nil) {
+        if (item.remark.length != 0) {
             return subTitleCell;
         } else {
             return cell;
@@ -418,8 +421,8 @@
         Item *item = self.datas[indexPath.section].items[indexPath.row];
         [dc.managedObjectContext deleteObject:item];
         [dc saveToCoreData];
-        [self.datas[indexPath.section].items removeObjectAtIndex:indexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//        [self.datas[indexPath.section].items removeObjectAtIndex:indexPath.row];
+//        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //        [self coreDataHasChange];
         [[NSNotificationCenter defaultCenter] postNotificationName:COREDATA_HASCHANGE_NOTIFICATION object:nil];
     }

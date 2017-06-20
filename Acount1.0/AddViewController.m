@@ -365,7 +365,12 @@
         item.money = [intString intValue];
         item.trueDate = prepareTrueDate;
         item.formatDate = prepareFormatDate;
-        item.remark = self.remarkTextField.text;
+        if (self.remarkTextField.text.length !=0) {
+            item.remark = self.remarkTextField.text;
+        } else {
+            item.remark = @"";
+        }
+//        item.remark = self.remarkTextField.text;
         item.io = NO;
         
         [dc insertItem:item WithCategorylName:selectedCategoryName];

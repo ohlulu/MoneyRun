@@ -40,6 +40,9 @@
     self.bgView.layer.borderWidth = 2.0f;
     self.bgView.layer.borderColor = cgColor;
     NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:notityTime];
+    if (date == nil) {
+        date = [NSDate date];
+    }
     [self.timePicker setDate:date];
 
     

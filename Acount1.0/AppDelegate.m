@@ -81,15 +81,12 @@
     }
     
     DataController *dc = [DataController sharedInstance];
-    [[dc loadItemsGroupByFormatMonth:@"" andFormatYear:@""] enumerateObjectsUsingBlock:^(CustomData * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj.items enumerateObjectsUsingBlock:^(Item * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (obj.remark == nil) {
-                obj.remark = @"";
-            }
-        }];
+    [[dc loadFromCoreData] enumerateObjectsUsingBlock:^(Item * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.remark == nil) {
+            obj.remark = @"";
+        }
     }];
     [dc saveToCoreData];
-    
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 
     return YES;

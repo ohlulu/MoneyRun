@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnV-JT-JQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1578" y="427"/>
+            <point key="canvasLocation" x="-1049" y="239"/>
         </scene>
         <!--Setting Table View Contoller-->
         <scene sceneID="0Tg-6H-4Iz">
@@ -288,10 +288,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tag.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Np-7g-jdr">
-                                                    <rect key="frame" x="16" y="10" width="32" height="32"/>
+                                                    <rect key="frame" x="16" y="12" width="28" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="8EM-es-muA"/>
-                                                        <constraint firstAttribute="width" constant="32" id="m2p-wd-pvr"/>
+                                                        <constraint firstAttribute="height" constant="28" id="8EM-es-muA"/>
+                                                        <constraint firstAttribute="width" constant="28" id="m2p-wd-pvr"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bW-mz-A3z">
@@ -304,7 +304,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS4-yH-NGQ">
-                                                    <rect key="frame" x="64" y="6" width="67" height="40"/>
+                                                    <rect key="frame" x="60" y="6" width="67" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="KWd-Ft-iDf"/>
                                                     </constraints>
@@ -338,10 +338,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="open.png" translatesAutoresizingMaskIntoConstraints="NO" id="j9l-d0-f1Q">
-                                                    <rect key="frame" x="16" y="10" width="32" height="32"/>
+                                                    <rect key="frame" x="16" y="12" width="28" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="85d-nJ-Tyl"/>
-                                                        <constraint firstAttribute="height" constant="32" id="PWM-Tw-Huv"/>
+                                                        <constraint firstAttribute="width" constant="28" id="85d-nJ-Tyl"/>
+                                                        <constraint firstAttribute="height" constant="28" id="PWM-Tw-Huv"/>
                                                     </constraints>
                                                 </imageView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0em-Ae-SIl">
@@ -355,7 +355,7 @@
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywi-Gg-hkk">
-                                                    <rect key="frame" x="64" y="6" width="39.666666666666671" height="40"/>
+                                                    <rect key="frame" x="60.000000000000007" y="6" width="39.666666666666679" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="60P-Zz-cZk"/>
                                                     </constraints>
@@ -382,10 +382,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time.png" translatesAutoresizingMaskIntoConstraints="NO" id="glE-YS-VT3">
-                                                    <rect key="frame" x="16" y="10" width="32" height="32"/>
+                                                    <rect key="frame" x="16" y="12" width="28" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="7m3-r7-EYY"/>
-                                                        <constraint firstAttribute="width" constant="32" id="GAc-gD-QNT"/>
+                                                        <constraint firstAttribute="height" constant="28" id="7m3-r7-EYY"/>
+                                                        <constraint firstAttribute="width" constant="28" id="GAc-gD-QNT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-aS-jRR">
@@ -408,7 +408,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYh-mp-5bc">
-                                                    <rect key="frame" x="64" y="6" width="84" height="40.666666666666664"/>
+                                                    <rect key="frame" x="60" y="6" width="84" height="40.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="zJz-hd-pRW"/>
                                                     </constraints>
@@ -441,10 +441,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tts-Z5-a4e">
-                                                    <rect key="frame" x="16" y="10" width="32" height="32"/>
+                                                    <rect key="frame" x="16" y="12" width="28" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="KyS-Hh-T8q"/>
-                                                        <constraint firstAttribute="width" constant="32" id="tda-Po-gFh"/>
+                                                        <constraint firstAttribute="height" constant="28" id="KyS-Hh-T8q"/>
+                                                        <constraint firstAttribute="width" constant="28" id="tda-Po-gFh"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KH8-Il-LT6">
@@ -457,7 +457,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享給好友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mos-zg-DxZ">
-                                                    <rect key="frame" x="64" y="6" width="82" height="40"/>
+                                                    <rect key="frame" x="60" y="6" width="82" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="m1W-dd-bLC"/>
                                                     </constraints>
@@ -484,10 +484,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail.png" translatesAutoresizingMaskIntoConstraints="NO" id="S0r-Of-bzE">
-                                                    <rect key="frame" x="16" y="10" width="32" height="32"/>
+                                                    <rect key="frame" x="16" y="12" width="28" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="K9L-Vc-Igs"/>
-                                                        <constraint firstAttribute="height" constant="32" id="PuD-LW-jUp"/>
+                                                        <constraint firstAttribute="width" constant="28" id="K9L-Vc-Igs"/>
+                                                        <constraint firstAttribute="height" constant="28" id="PuD-LW-jUp"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWl-IE-6F8">
@@ -500,7 +500,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="意見回饋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXg-xW-m0N">
-                                                    <rect key="frame" x="64" y="6" width="65.666666666666657" height="40"/>
+                                                    <rect key="frame" x="60.000000000000007" y="6" width="65.666666666666686" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="LTO-Hn-0R7"/>
                                                     </constraints>
@@ -527,10 +527,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like.png" translatesAutoresizingMaskIntoConstraints="NO" id="bzf-l3-50n">
-                                                    <rect key="frame" x="16" y="10" width="32" height="32"/>
+                                                    <rect key="frame" x="16" y="12" width="28" height="28"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="32" id="I1K-1y-ub9"/>
-                                                        <constraint firstAttribute="height" constant="32" id="NSg-BM-IPS"/>
+                                                        <constraint firstAttribute="width" constant="28" id="I1K-1y-ub9"/>
+                                                        <constraint firstAttribute="height" constant="28" id="NSg-BM-IPS"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzT-hC-lj4">
@@ -543,7 +543,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="給予評價" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgE-HB-9o7">
-                                                    <rect key="frame" x="64" y="6" width="65.666666666666657" height="40"/>
+                                                    <rect key="frame" x="60.000000000000007" y="6" width="65.666666666666686" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="cCH-lt-z7N"/>
                                                     </constraints>
@@ -579,7 +579,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Acn-mB-gTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2061.5999999999999" y="-1621.4392803598203"/>
+            <point key="canvasLocation" x="1068" y="-1645"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="jgk-el-KHs">
@@ -869,7 +869,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3b-NT-g79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2918" y="-890"/>
+            <point key="canvasLocation" x="3080" y="-891"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="gAQ-Rh-0Np">
@@ -890,7 +890,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GzH-Bz-042" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1577" y="-541"/>
+            <point key="canvasLocation" x="-1048" y="-587"/>
         </scene>
         <!--Selected Tiem View Controller-->
         <scene sceneID="seM-LI-omT">
@@ -995,7 +995,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFm-QD-YZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3031.1999999999998" y="-1627.7361319340332"/>
+            <point key="canvasLocation" x="2062" y="-1645"/>
         </scene>
         <!--Category Add View Controller-->
         <scene sceneID="tdB-PM-nce">

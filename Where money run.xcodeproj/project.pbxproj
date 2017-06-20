@@ -36,6 +36,8 @@
 		505F46DD1EF2C00C00AA4231 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46DC1EF2C00C00AA4231 /* share@2x.png */; };
 		505F46DF1EF2C07F00AA4231 /* like@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46DE1EF2C07F00AA4231 /* like@3x.png */; };
 		505F46E11EF2C09700AA4231 /* like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46E01EF2C09700AA4231 /* like@2x.png */; };
+		505F46EB1EF3873C00AA4231 /* LaunchScreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46E91EF3873C00AA4231 /* LaunchScreen@2x.png */; };
+		505F46EC1EF3873C00AA4231 /* LaunchScreen@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505F46EA1EF3873C00AA4231 /* LaunchScreen@3x.png */; };
 		506029511EEFD0DE00F20D7C /* setup@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 506029501EEFD0DE00F20D7C /* setup@2x.png */; };
 		5060295A1EEFF08200F20D7C /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029591EEFF08200F20D7C /* SettingTableViewCell.m */; };
 		506029611EF0E61000F20D7C /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506029601EF0E61000F20D7C /* NotificationViewController.m */; };
@@ -168,6 +170,8 @@
 		505F46DC1EF2C00C00AA4231 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
 		505F46DE1EF2C07F00AA4231 /* like@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@3x.png"; sourceTree = "<group>"; };
 		505F46E01EF2C09700AA4231 /* like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like@2x.png"; sourceTree = "<group>"; };
+		505F46E91EF3873C00AA4231 /* LaunchScreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchScreen@2x.png"; sourceTree = "<group>"; };
+		505F46EA1EF3873C00AA4231 /* LaunchScreen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchScreen@3x.png"; sourceTree = "<group>"; };
 		506029501EEFD0DE00F20D7C /* setup@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setup@2x.png"; sourceTree = "<group>"; };
 		506029581EEFF08200F20D7C /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		506029591EEFF08200F20D7C /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 		5035937F1EA8E0DB005C5AB3 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				505F46E41EF3831E00AA4231 /* LaunchScreen */,
 				5060296F1EF28EF100F20D7C /* SettingView */,
 				50D285961ED6C5F300083888 /* CategoryImage */,
 				50DD10D61EE3EB8C001D9084 /* back@3x.png */,
@@ -431,6 +436,15 @@
 				505DF42F1E9CB612002FA726 /* Info.plist */,
 			);
 			path = Acount1.0UITests;
+			sourceTree = "<group>";
+		};
+		505F46E41EF3831E00AA4231 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				505F46E91EF3873C00AA4231 /* LaunchScreen@2x.png */,
+				505F46EA1EF3873C00AA4231 /* LaunchScreen@3x.png */,
+			);
+			name = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		5060295D1EF0E45400F20D7C /* SettingCell */ = {
@@ -694,6 +708,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				505F46DB1EF2BA0300AA4231 /* time@2x.png in Resources */,
+				505F46EC1EF3873C00AA4231 /* LaunchScreen@3x.png in Resources */,
 				507BDD941ED70804005E1ABA /* drink@3x.png in Resources */,
 				505DF4181E9CB612002FA726 /* LaunchScreen.storyboard in Resources */,
 				50D285BF1ED6D15500083888 /* calendar@2x.png in Resources */,
@@ -709,6 +724,7 @@
 				505F46DD1EF2C00C00AA4231 /* share@2x.png in Resources */,
 				50D285C01ED6D15500083888 /* calendar@3x.png in Resources */,
 				505DF4101E9CB612002FA726 /* Main.storyboard in Resources */,
+				505F46EB1EF3873C00AA4231 /* LaunchScreen@2x.png in Resources */,
 				505F46D31EF2B83000AA4231 /* open@2x.png in Resources */,
 				50D285A71ED6C61E00083888 /* car@2x.png in Resources */,
 				50D285AF1ED6C61E00083888 /* food@2x.png in Resources */,
