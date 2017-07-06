@@ -21,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-1F-LvP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-1F-LvP">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ZH2-1F-LvP" secondAttribute="trailing" id="0kB-Be-Zjo"/>
-                            <constraint firstItem="ZH2-1F-LvP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="QoP-hn-Kn0"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ZH2-1F-LvP" secondAttribute="bottom" id="fSM-Jx-zPD"/>
-                            <constraint firstItem="ZH2-1F-LvP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="oux-Jg-Cgr"/>
+                            <constraint firstAttribute="trailing" secondItem="ZH2-1F-LvP" secondAttribute="trailing" id="4xD-DW-s6t"/>
+                            <constraint firstItem="ZH2-1F-LvP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="aFs-k7-Ppo"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ZH2-1F-LvP" secondAttribute="bottom" id="bGG-bC-bzw"/>
+                            <constraint firstItem="ZH2-1F-LvP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ouX-Sx-Wrq"/>
                         </constraints>
                     </view>
                 </viewController>

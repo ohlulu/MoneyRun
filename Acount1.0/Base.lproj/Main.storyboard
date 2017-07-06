@@ -596,7 +596,7 @@
                             <view opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="2dF-OK-hfC">
                                 <rect key="frame" x="0.0" y="64" width="414" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wn0-Fz-3zi">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="wn0-Fz-3zi">
                                         <rect key="frame" x="16" y="8" width="382" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIX-aw-wFr">
@@ -617,7 +617,7 @@
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="01234567" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgX-1S-wfR">
-                                                <rect key="frame" x="44" y="0.0" width="338" height="44"/>
+                                                <rect key="frame" x="59" y="0.0" width="323" height="44"/>
                                                 <color key="backgroundColor" red="0.52879124369999997" green="0.52879124369999997" blue="0.52879124369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="cGM-6c-sxr"/>
@@ -1107,6 +1107,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2F9-Zw-cBz"/>
-        <segue reference="MNM-ND-jCq"/>
+        <segue reference="8Li-5E-01w"/>
     </inferredMetricsTieBreakers>
 </document>

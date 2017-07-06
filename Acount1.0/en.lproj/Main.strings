@@ -1,0 +1,123 @@
+
+/* Class = "UILabel"; text = "類別名稱："; ObjectID = "2ti-Q4-5VO"; */
+"2ti-Q4-5VO.text" = "Category：";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3iR-XC-hup"; */
+"3iR-XC-hup.text" = "Label";
+
+/* Class = "UILabel"; text = ">"; ObjectID = "4bW-mz-A3z"; */
+"4bW-mz-A3z.text" = ">";
+
+/* Class = "UIButton"; normalTitle = "取消"; ObjectID = "4lN-d8-fjv"; */
+"4lN-d8-fjv.normalTitle" = "取消";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BAu-DW-vaK"; */
+"BAu-DW-vaK.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "<"; ObjectID = "C1d-qZ-pAX"; */
+"C1d-qZ-pAX.title" = "<";
+
+/* Class = "UIButton"; normalTitle = "現在時間"; ObjectID = "CX7-53-FnA"; */
+"CX7-53-FnA.normalTitle" = "現在時間";
+
+/* Class = "UILabel"; text = ">"; ObjectID = "EzT-hC-lj4"; */
+"EzT-hC-lj4.text" = ">";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "FS4-yH-NGQ"; */
+"FS4-yH-NGQ.text" = "Category";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FW5-pV-LEh"; */
+"FW5-pV-LEh.text" = "Label";
+
+/* Class = "UILabel"; text = "意見回饋"; ObjectID = "FXg-xW-m0N"; */
+"FXg-xW-m0N.text" = "意見回饋";
+
+/* Class = "UIButton"; normalTitle = "19"; ObjectID = "IHg-pu-dRb"; */
+"IHg-pu-dRb.normalTitle" = "19";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Jrd-zE-3gg"; */
+"Jrd-zE-3gg.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "History"; ObjectID = "KCV-Rk-aJu"; */
+"KCV-Rk-aJu.title" = "History";
+
+/* Class = "UILabel"; text = ">"; ObjectID = "KH8-Il-LT6"; */
+"KH8-Il-LT6.text" = ">";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "LaA-T0-3y9"; */
+"LaA-T0-3y9.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "About"; ObjectID = "LaA-T0-3y9"; */
+"LaA-T0-3y9.headerTitle" = "About";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MOW-f4-53H"; */
+"MOW-f4-53H.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "四月"; ObjectID = "OiO-jJ-v0C"; */
+"OiO-jJ-v0C.normalTitle" = "四月";
+
+/* Class = "UILabel"; text = "Notify Time"; ObjectID = "RYh-mp-5bc"; */
+"RYh-mp-5bc.text" = "Notify Time";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Svj-Ic-1FR"; */
+"Svj-Ic-1FR.text" = "Label";
+
+/* Class = "UILabel"; text = "給予評價"; ObjectID = "WgE-HB-9o7"; */
+"WgE-HB-9o7.text" = "給予評價";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "Wpg-1s-5U9"; */
+"Wpg-1s-5U9.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = "Notify"; ObjectID = "Wpg-1s-5U9"; */
+"Wpg-1s-5U9.headerTitle" = "Notify";
+
+/* Class = "UITextField"; placeholder = "#You can input hastag"; ObjectID = "XLa-Sb-ySY"; */
+"XLa-Sb-ySY.placeholder" = "#You can input hastag";
+
+/* Class = "UILabel"; text = "Open"; ObjectID = "Ywi-Gg-hkk"; */
+"Ywi-Gg-hkk.text" = "Open";
+
+/* Class = "UILabel"; text = ">"; ObjectID = "aWl-IE-6F8"; */
+"aWl-IE-6F8.text" = ">";
+
+/* Class = "UIButton"; normalTitle = "Butto"; ObjectID = "dGO-ts-ysN"; */
+"dGO-ts-ysN.normalTitle" = "Butto";
+
+/* Class = "UITextField"; text = "01234567"; ObjectID = "dgX-1S-wfR"; */
+"dgX-1S-wfR.text" = "01234567";
+
+/* Class = "UITabBarItem"; title = "Analysis"; ObjectID = "f2c-L2-x56"; */
+"f2c-L2-x56.title" = "Analysis";
+
+/* Class = "UIBarButtonItem"; title = "New"; ObjectID = "kh5-yS-2Ky"; */
+"kh5-yS-2Ky.title" = "New";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "klh-ep-OW5"; */
+"klh-ep-OW5.text" = "00:00";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "mYv-8w-43S"; */
+"mYv-8w-43S.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "mYv-8w-43S"; */
+"mYv-8w-43S.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "分享給好友"; ObjectID = "mos-zg-DxZ"; */
+"mos-zg-DxZ.text" = "分享給好友";
+
+/* Class = "UILabel"; text = "月花費"; ObjectID = "oAG-xg-Z9S"; */
+"oAG-xg-Z9S.text" = "Month cost";
+
+/* Class = "UIButton"; normalTitle = "確認"; ObjectID = "reg-GU-QUc"; */
+"reg-GU-QUc.normalTitle" = "確認";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "rhf-Rf-9gO"; */
+"rhf-Rf-9gO.text" = "Title";
+
+/* Class = "UILabel"; text = ">"; ObjectID = "wuc-aS-jRR"; */
+"wuc-aS-jRR.text" = ">";
+
+/* Class = "UISegmentedControl"; y2z-JF-6ei.segmentTitles[0] = "今天"; ObjectID = "y2z-JF-6ei"; */
+"y2z-JF-6ei.segmentTitles[0]" = "Tday";
+
+/* Class = "UISegmentedControl"; y2z-JF-6ei.segmentTitles[1] = "昨天"; ObjectID = "y2z-JF-6ei"; */
+"y2z-JF-6ei.segmentTitles[1]" = "Yday";

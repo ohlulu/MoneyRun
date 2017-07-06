@@ -12,7 +12,7 @@
 
 @protocol AddViewControllerDelegate <NSObject>
 
--(void) didFinishEditItem:(Item *) item;
+-(void) didFinishEditItemIn:(NSDate *) date;
 
 @end
 

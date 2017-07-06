@@ -156,23 +156,31 @@
     } else {
         bool isShowSR = [defaults boolForKey:isShowStoreReview];
         if (!isShowSR) {
-            if (NSClassFromString(@"SKStoreReviewController")) {
-                [SKStoreReviewController requestReview];
-                [defaults setBool:YES forKey:isShowStoreReview];
-            } else {
-                UIAlertController *askController = [UIAlertController alertControllerWithTitle:@"Hello" message:@"If you like this app, please rate in App store. Thanks." preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *laterAction = [UIAlertAction actionWithTitle:@"Later" style:UIAlertActionStyleDefault handler:nil];
-                UIAlertAction *okActino = [UIAlertAction actionWithTitle:@"Rate" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            if (NSClassFromString(@"SKStoreReviewController")) {
+//                [SKStoreReviewController requestReview];
+//                [defaults setBool:YES forKey:isShowStoreReview];
+//            } else {
+                UIAlertController *askController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"alertTitle", @"")
+                                                                                       message:NSLocalizedString(@"alertSubTitle", @"")
+                                                                                preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction *laterAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"later",@"")
+                                                                      style:UIAlertActionStyleDefault handler:nil];
+                
+                UIAlertAction *okActino = [UIAlertAction actionWithTitle:NSLocalizedString(@"rate",@"")
+                                                                   style:UIAlertActionStyleDefault
+                                                                 handler:^(UIAlertAction * _Nonnull action) {
                     NSString *appID = @"1242869090";
                     NSString *rateURL = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%@",appID];
                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:rateURL] options:@{} completionHandler:nil];
-                    [defaults setBool:YES forKey:isShowStoreReview];
+                    
                 }];
                 [askController addAction:laterAction];
                 [askController addAction:okActino];
                 [self presentViewController:askController animated:YES completion:nil];
+                [defaults setBool:YES forKey:isShowStoreReview];
                 
-            }
+//            }
             
         }
     }
@@ -457,9 +465,19 @@
 
 
 #pragma mark - AddViewControllerDelegate
--(void)didFinishEditItem:(Item *)item {
+
+-(void)didFinishEditItemIn:(NSDate *)date {
     
-    NSLog(@"get");
+    NSString *currentMonthString = [formatMonth stringFromDate:date];
+    NSString *currentYearString = [formatYear stringFromDate:date];
+    
+    self.datas = [dc loadItemsGroupByFormatMonth:currentMonthString andFormatYear:currentYearString];
+    
+    CustomData *topData = [CustomData new];
+    topData.title =[NSString localizedStringWithFormat:@"%@",[dc sumOfMoneyWithMonth:currentMonthString andYear:currentYearString]];
+    [self.datas insertObject:topData atIndex:0];
+    
+    [self.tableView reloadData];
     
 }
 

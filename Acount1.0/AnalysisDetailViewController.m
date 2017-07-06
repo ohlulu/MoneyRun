@@ -75,6 +75,8 @@
     
     [self getDataFromCoreDataWithMonth:self.month AndYear:self.year];
     
+    // NavigationBar
+    [self.navigationItem setTitle:self.month];
     
     // PieChart new than add on view
     self.pieChartView = [[PieChartView alloc] init];
@@ -82,14 +84,14 @@
     UIColor *color = [UIColor lightGrayColor];
     self.pieChartView.layer.masksToBounds = NO;
     self.pieChartView.layer.shadowColor = [color CGColor];
-    self.pieChartView.layer.shadowRadius = 2.0f;
+    self.pieChartView.layer.shadowRadius = 4.0f;
     self.pieChartView.layer.shadowOpacity = 0.67;
-    self.pieChartView.layer.shadowOffset = CGSizeMake(8, 8);
+    self.pieChartView.layer.shadowOffset = CGSizeMake(5, 5);
     [self.view addSubview:self.pieChartView];
     
     // Scroll View new than add on view
     self.scView = [[UIScrollView alloc] init];
-    self.scView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0);
+    self.scView.contentInset = UIEdgeInsetsMake(.0, 0, 0, 0);
     [self.scView setContentOffset:CGPointMake(0, 0) animated:NO];
     self.scView.delegate = self;
     self.scView.backgroundColor = [UIColor clearColor];
@@ -100,9 +102,9 @@
     self.barChartView.backgroundColor = [UIColor clearColor];
     self.barChartView.layer.masksToBounds = NO;
     self.barChartView.layer.shadowColor = [color CGColor];
-    self.barChartView.layer.shadowRadius = 2.0f;
+    self.barChartView.layer.shadowRadius = 4.0f;
     self.barChartView.layer.shadowOpacity = 0.67;
-    self.barChartView.layer.shadowOffset = CGSizeMake(8, 8);
+    self.barChartView.layer.shadowOffset = CGSizeMake(5, 5);
     
     [self.scView addSubview:self.barChartView];
     
@@ -318,7 +320,7 @@
     [self.barChartView.trailingAnchor constraintEqualToAnchor:self.scView.trailingAnchor constant:0].active = YES;
     
     [self.barChartView.heightAnchor constraintEqualToConstant:barDataCount*40+30].active = YES;
-    [self.barChartView.widthAnchor constraintEqualToConstant:[UIScreen mainScreen].bounds.size.width].active = YES;
+    [self.barChartView.widthAnchor constraintEqualToConstant:[UIScreen mainScreen].bounds.size.width-16].active = YES;
     
     
     self.scView.translatesAutoresizingMaskIntoConstraints = NO;

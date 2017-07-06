@@ -6,21 +6,38 @@
   Copyright © 2017年 ohlulu. All rights reserved.
 */
 
-"Cancel" = "Cancel";
+"Cancel"        = "Cancel";
 
-"Today" = "Today";
-"Yesterday" = "Yesterday";
-"Tomorrow" = "Tomorrow";
-"Save" = "Save";
-"Category" = "Category";
-"AllCategory" = "Money's footprint";
+"Today"         = "Today";
+"Yesterday"     = "Yesterday";
+"Tomorrow"      = "Tomorrow";
 
-"setting" = "Setting";
-"category" = "Category";
-"notify" = "Notify";
-"open" = "Open";
-"notifyTime" = "Notify Time";
-"about" = "About";
-"share" = "Share";
-"feedback" = "FeedBack";
-"evaluation" = "Evaluation";
+"Save"          = "Save";
+"Category"      = "Category";
+"AllCategory"   = "Money's footprint";
+
+"setting"       = "Setting";
+"category"      = "Category";
+"notify"        = "Notify";
+"open"          = "Open";
+"notifyTime"    = "Notify Time";
+"about"         = "About";
+"share"         = "Share";
+"feedback"      = "FeedBack";
+"evaluation"    = "Evaluation";
+
+"alertTitle"    = "Hello";
+"alertSubTitle" = "If you like this app, please rate in App store. Thanks.";
+"later"         = "Later";
+"rate"          = "Rate";
+
+"food"          = "Food";
+"drink"         = "Drink";
+"snacks"        = "Snacks";
+"car"           = "Traffic";
+"play"          = "Play";
+"pet"           = "Pet";
+"travel"        = "Travel";
+"coat"          = "Coat";
+"doctor"        = "Doctor";
+"house"         = "House";

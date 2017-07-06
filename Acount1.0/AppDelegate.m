@@ -52,8 +52,17 @@
     if (!isFirst) {
         
         DataController *dc = [DataController sharedInstance];
-        
-        [CATEGORY_LIST enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSArray *arr = @[NSLocalizedString(@"food", @""),
+                         NSLocalizedString(@"drink", @""),
+                         NSLocalizedString(@"snacks", @""),
+                         NSLocalizedString(@"car", @""),
+                         NSLocalizedString(@"play", @""),
+                         NSLocalizedString(@"pet", @""),
+                         NSLocalizedString(@"travel", @""),
+                         NSLocalizedString(@"coat", @""),
+                         NSLocalizedString(@"doctor", @""),
+                         NSLocalizedString(@"house", @"")];
+        [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             Category *category = [NSEntityDescription insertNewObjectForEntityForName:ENTITY_CATEGORY inManagedObjectContext:dc.managedObjectContext];
             category.name = obj;

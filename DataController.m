@@ -208,8 +208,12 @@
         NSLog(@"load Items Group By FormatDate Error: %@",err);
     }
     
-    NSMutableArray<CustomData *> *datas = [[NSMutableArray alloc] init];
-
+    __block NSMutableArray<CustomData *> *datas = [[NSMutableArray alloc] init];
+    
+    if (results.count==0) {
+        return datas;
+    }
+    
     [results enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         CustomData *section = [CustomData new];

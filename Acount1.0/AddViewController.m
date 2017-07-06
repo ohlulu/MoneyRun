@@ -89,7 +89,7 @@
     if (self.presentingViewController) {
         
         // Init addButton status and background color
-        [self.addButton setEnabled:NO];
+//        [self.addButton setEnabled:NO];
         self.addButton.backgroundColor = [UIColor lightGrayColor];
         
         NSString *imageName = self.categoryList[0].imageName;
@@ -98,7 +98,7 @@
         
     } else {
         
-        [self.addButton setEnabled:YES];
+//        [self.addButton setEnabled:YES];
         self.addButton.backgroundColor = OHSaveButtonActionColor;
         
         selectedCategoryName = self.currentItem.category.name;
@@ -189,7 +189,8 @@
         prepareFormatDate = self.currentItem.formatDate;
         prepareTrueDate = self.currentItem.trueDate;
         
-//        [self.dateButton setTitle:prepareFormatDate forState:UIControlStateNormal];
+        
+        
         [self setDateButtonTitleWithDate:prepareTrueDate];
         
     }
@@ -218,7 +219,6 @@
     self.categoryTable.rowHeight = 50;
     self.categoryTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.categoryTable.backgroundColor = [UIColor clearColor];
-
     
     [self.categoryTable.bottomAnchor constraintEqualToAnchor:self.addButton.topAnchor constant:-20].active = YES;
     
@@ -316,6 +316,16 @@
     
     if ([intString integerValue] == 0) {
         
+        CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"position"];
+        [shake setDuration:0.1];
+        [shake setRepeatCount:2];
+        [shake setAutoreverses:YES];
+        [shake setFromValue:[NSValue valueWithCGPoint:
+                             CGPointMake(self.moneyText.center.x - 10,self.moneyText.center.y)]];
+        [shake setToValue:[NSValue valueWithCGPoint:
+                           CGPointMake(self.moneyText.center.x + 10, self.moneyText.center.y)]];
+        [self.moneyText.layer addAnimation:shake forKey:@"position"];
+        
         return;
     }
     
@@ -331,8 +341,7 @@
         
         // If addVC is pressenting from tabBarController
         
-        
-        
+    
         // New managed object then insert to core data
         Item *item = [NSEntityDescription insertNewObjectForEntityForName:ENTITY_ITEM inManagedObjectContext:dc.managedObjectContext];
         
@@ -352,7 +361,7 @@
         
         // Dismiss addVC
         [self dismissViewControllerAnimated:YES completion:^{
-            
+           [[NSNotificationCenter defaultCenter] postNotificationName:COREDATA_HASCHANGE_NOTIFICATION object:nil userInfo:nil];
         }];
         
     } else {
@@ -376,14 +385,13 @@
         [dc insertItem:item WithCategorylName:selectedCategoryName];
         
         [dc.managedObjectContext deleteObject:self.currentItem];
+        [dc saveToCoreData];
 
         [self.navigationController popViewControllerAnimated:YES];
-    
+        
+        [self.delegate didFinishEditItemIn:prepareTrueDate];
+        
     }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:COREDATA_HASCHANGE_NOTIFICATION object:nil userInfo:nil];
-    
-    
     
 }
 
@@ -443,6 +451,22 @@
     
     NSString *currentDateString = [dateFormat stringFromDate:date];
     [self.dateButton setTitle:currentDateString forState:UIControlStateNormal];
+    
+}
+
+
+#pragma mark - CustomFunction
+
+-(void) segmentControllWithDate:(NSDate *)date {
+    
+    if ([calendar isDateInToday:date]) {
+        [self.dateSegment setSelectedSegmentIndex:0];
+    } else if ([calendar isDateInYesterday:date]) {
+        [self.dateSegment setSelectedSegmentIndex:1];
+    } else {
+        self.dateSegment.selectedSegmentIndex = UISegmentedControlNoSegment;
+    }
+    
 }
 
 #pragma mark - CalendarViewControllerDelegate
@@ -479,13 +503,13 @@
     
     if ([intString integerValue] > 0) {
         
-        [self.addButton setEnabled:YES];
+//        [self.addButton setEnabled:YES];
         [UIView animateWithDuration:0.25 animations:^{
             self.addButton.backgroundColor = OHSaveButtonActionColor;
         }];
         
     } else if ([intString intValue] == 0 ) {
-        [self.addButton setEnabled:NO];
+//        [self.addButton setEnabled:NO];
         [UIView animateWithDuration:0.25 animations:^{
             self.addButton.backgroundColor = [UIColor lightGrayColor];
         }];

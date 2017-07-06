@@ -294,14 +294,13 @@
 
 - (void) registrationNotification {
     
+    // iOS10
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
-        //iOS10特有
-
-        // 必须写代理，不然无法监听通知的接收与点击
+        
         center.delegate = self;
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
             if (granted) {
-                // 点击允许
+                
                 NSLog(@"注册成功");
                 [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
                     NSDate *date = [defaults objectForKey:notityTime];
@@ -322,7 +321,7 @@
             }
         }];
     }
-    // 注册获得device Token
+    
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
 }

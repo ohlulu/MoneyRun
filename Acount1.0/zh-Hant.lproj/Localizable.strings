@@ -8,20 +8,39 @@
 
 "Cancel" = "取消";
 
-"Today" = "今天";
-"Yesterday" = "昨天";
-"Tomorrow" = "明天";
-"Save" = "儲存";
-"Category" = "類別";
-"AllCategory" = "錢的足跡";
+"Today"         = "今天";
+"Yesterday"     = "昨天";
+"Tomorrow"      = "明天";
+"Save"          = "儲存";
+"Category"      = "類別";
+"AllCategory"   = "錢的足跡";
 
-"setting" = "設定";
-"category" = "類別管理";
-"notify" = "通知";
-"open" = "開啟";
-"notifyTime" = "通知時間";
-"about" = "關於";
-"share" = "分享給好友";
-"feedback" = "聯繫作者";
+"setting"       = "設定";
+"category"      = "類別管理";
+"notify"        = "通知";
+"open"          = "開啟";
+"notifyTime"    = "通知時間";
+"about"         = "關於";
+"share"         = "分享給好友";
+"feedback"      = "希望與建議";
 
-"evaluation" = "給一個鼓勵";
+"evaluation"    = "給一個鼓勵";
+
+"alertTitlt"    = "感謝您的使用";
+"alertSubTitle" = "如果喜歡我們的App，請給我們一個評價，您的鼓勵是我們最大的動力。";
+"later"         = "騷後";
+"rate"          = "評分";
+
+"food"          = "食物";
+"drink"         = "飲料";
+"snacks"        = "零食";
+"car"           = "交通";
+"play"          = "娛樂";
+"pet"           = "寵物";
+"travel"        = "旅行";
+"coat"          = "服裝";
+"doctor"        = "醫療";
+"house"         = "居住";
+
+
+
